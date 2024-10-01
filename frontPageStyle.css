@@ -100,7 +100,7 @@ li a.active,li a:hover{
 
 #welcomeInfo {
     width: auto;
-    height: fit-content;
+    height: auto;
 }
 
 #welcomeInfo .content {
@@ -126,29 +126,44 @@ li a.active,li a:hover{
     justify-content: center;
     justify-self: center;
 }
+/*
+#welcomeInfo .contentHeader p { /* NEW STUFF I ADDED 
+    font-size: 40px;
+    color:rgb(255,255,255);
+}*/
 
 #welcomeInfo .contentText p {
     font-size: 20px;
     color:rgb(255, 255, 255);
 }
 
-#welcomeInfo .contentImage {
+/* BIG GRAY BLOCK */
+#welcomeInfo .contentImage {    
     width: 900px;
     height: 550px;
     background:rgb(170, 170, 170);
     text-align: center;
     line-height: 200px;
     border-radius: 20px;
-    margin: 15px 30px;
+    margin-top: 30px;
+    margin: 0px 15px;
+    margin-bottom: 10%;;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+#welcomeInfo .contentImage img { /* Image size & borders */
+    width: 700px;
+    height: 400px;
 }
 
 @media screen and (max-width: 3000px) {
     #welcomeInfo .contentText {
-
+    
     }
     
     #welcomeInfo .contentImage {
-
     }
 }
 
@@ -173,88 +188,6 @@ li a.active,li a:hover{
     }
 }
 
-
-
-#speechBubble {
-    height: 80px;
-    width:fit-content;
-    border:rgb(0, 0, 0);
-    border-radius: 5px;
-    border-color: #000;
-    border-style: solid;
-    color:rgb(255, 255, 255);
-    margin: 10px;
-    margin-left: 20px;
-    position: relative;
-    background-color: #000;
-}
-
-#speechBubble::after {
-    content: "";
-    display: block;
-    position: absolute;
-
-    left:-15px;
-    top: 15px;
-
-    width: 0;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-right: 15px solid #000;
-    
-}
-
-#speechBubble h4 {
-    font-size: 20px;
-    margin: 10px;
-}
-
-#speechBubble h5 {
-    justify-content: center;
-    position: relative;
-    padding: 10px 20px 10px 10px;
-    font-size: 15px;
-    color:rgb(125, 125, 125);
-}
-
-#activeVoteOpportunitiesFeed {
-    background-color: #d7d7d7;
-    padding:  50px 0px 40px 10px;
-}
-
-#activeVoteOpportunitiesFeed h2 {
-    border-color: transparent;
-    border-style: solid;
-    margin: 10px;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-top-left-radius: 30px 60px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    width: fit-content;
-    height: auto;
-    background-color: rgb(170, 170, 170);
-}
-
-#activeVoteOpportunitiesFeed .boxes {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-#activeVoteOpportunitiesFeed .box {
-    width: 400px;
-    height: 200px;
-    background:rgb(170, 170, 170);
-    text-align: center;
-    line-height: 200px;
-    border-radius: 20px;
-    margin: 25px 30px;
-}
-
 .getStarted {
     /*display: flex;
     flex-direction: row;
@@ -268,70 +201,6 @@ li a.active,li a:hover{
     justify-content: center;
 }
 
-.ballotBox {
-    height: fit-content;
-    min-width: 330px;
-    border-radius: 10px;
-    border-color:rgb(227, 227, 227);
-    border-style: solid;
-    border-width: 1px;
-    padding: 20px, 0;
-    display: flex;
-    flex-direction: column;
-    margin: 40px 20px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.createBallotImage {
-    border-radius: 1rem;
-    border-color: rgb(221, 221, 221);
-    background:rgb(170, 170, 170);
-    height: 200px;
-    width: 100%;
-}
-
-.joinBallotImage {
-    border-radius: 1rem;
-    border-color: rgb(221, 221, 221);
-    background:rgb(170, 170, 170);
-    height: 200px;
-    width: 100%;
-}
-
-.ballotBox h3 {
-    float: left;
-    padding: 10px 0px;
-    font-size: 25px;
-}
-
-.ballotBox .createJoinBallot {
-    border-radius: 10px;
-    border-color: transparent;
-    border-width: 3px;
-    padding: 15px 20px;
-    margin: 0px 30px;
-    width: fit-content;
-    font-size: 20px;
-} 
-
-/*@media screen and (max-width: 770px) {
-    .ballotBox {
-        padding: 20px 10px;
-    }
-
-    .ballotBox h3 {
-        font-size: 19px;
-    }
-
-    .ballotBox .createJoinBallot {
-        margin: 0px 10px;
-        padding: 15px 0px;
-        font-size: 15px;
-    }
-}*/
 
 .actionsTitle {
     padding-top: 40px;
@@ -340,81 +209,6 @@ li a.active,li a:hover{
     text-align: center;
     font-size: 40px;
     color:rgb(125, 125, 125);
-}
-
-.aboutVotespot {
-    /*cool background sorta, mostly one plain color but with like 
-    shapes? like outlines of stars, the earth, notes, ballot boxes etc. */ 
-    align-content: center;
-    justify-content: center;
-    text-align: center;
-    background-color:rgb(170, 170, 170);
-    padding-top: 30px;
-}
-
-.aboutVotespot .bullets {
-    padding: 20px 60px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-
-    
-}
-
-.aboutVotespot .bullet {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.aboutVotespot .bullet .bullet1Image {
-    background-color:rgb(125, 125, 125);
-    height: 70px;
-    width: 70px;
-    margin: 40px 0px;
-}
-
-.aboutVotespot .bullet .bullet2Image {
-    background-color:rgb(125, 125, 125);
-    height: 70px;
-    width: 70px;
-    margin: 40px 0px;
-}
-
-.aboutVotespot .bullet .bullet3Image {
-    background-color:rgb(125, 125, 125);
-    height: 70px;
-    width: 70px;
-    margin: 40px 0px;
-}
-
-.aboutVotespot .bullet h3 {
-    padding-left: 5%;
-    font-size: 20px;
-}
-
-.aboutVotespot .bullet p {
-    line-height: 30px;
-    width: 70%;
-    color: white;
-}
-
-@media screen and (max-width: 800px) {
-    .aboutVotespot .bullet p {
-        width: auto;
-    }
-    
-}
-.aboutVotespot .bullet .column {
-    width: 100%;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 20px;
 }
 
 .footer {
@@ -482,4 +276,51 @@ li a.active,li a:hover{
         text-align: center;
         margin: 10px;
     }
+}
+
+.websiteInfoContainer {
+    padding-bottom: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background:rgb(213, 213, 213);
+    justify-content: center;
+    border: black 2px solid;
+}
+/*
+.websiteInfo {
+    max-width: 80em;
+    width: 100%;
+    height: auto;
+    background:rgb(170, 170, 170);
+    border-radius: 1em;
+    justify-content: center;
+    justify-items: center;
+    border: black 2px solid;
+}*/
+
+.boxes {
+    border: black 2px solid;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background:rgb(170, 170, 170);
+    border-radius: 1em;
+}
+.box {
+    width: 400px;
+    height: 200px;
+    background:rgb(255, 255, 255);
+    text-align: center;
+    line-height: 200px;
+    border-radius: 20px;
+    margin: 25px 30px;
+}
+
+.title {
+    justify-content: center;
+    text-align: center;
+    padding: 5em 0em;
 }
