@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Recycle E-Waste</title>
+    <link rel="stylesheet" type="text/css" href="recyclePage.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+        
+    
+    <header id="navbar">
+            <h1><a href="frontPage.html" class="logo">Comp.Name</a></h1>
+            <ul>
+                <li class="recyclePage"><a href="recyclePage.html">Recycle</a></li>
+                <li><a href="">Temp</a></li>
+                <li><a href="">Temp</a></li>
+            </ul>
+    </header>
+    
+    <body>
+        <script type="text/javascript"> 
+            var scrolltotop = document.scrollingElement.scrollTop;
+            var target = document.getElementById("infoRecycling");
+            var xvalue = "center";
+            var factor = 0.5;
+            var yvalue = scrolltotop * factor;
+            target.style.backgroundPosition = xvalue + " " + yvalue + "px";
+        </script>
+        <div class="infoRecycling">
+            <br>
+            <h1 id="warning">
+                DO NOT Throw Away Electronics!
+            </h1>
+            <br>
+            <h2>
+                Help Reduce Your E-Waste At Your Nearest Recycling Center.
+            </h2>
+        </div>
+        <div class="mapRecycling">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d423350.6087619264!2d-118.301080972713!3d34.007258351766694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1selectronic%20recycling%20centers%20la!5e0!3m2!1sen!2sus!4v1727762138668!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </body>
+</html>

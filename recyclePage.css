@@ -1,0 +1,112 @@
+*{
+  	box-sizing: border-box;
+	font-family: sans-serif;
+	text-align: center;
+}
+@media screen and (min-width: 650px) {
+    header {
+	    position: fixed; 
+	    color: rgb(0, 0, 0);
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+	    padding: 10px 65px;
+	    z-index: 100000;
+        transition: 0.5s;
+        background-color: rgb(200, 200, 200);
+    }
+}
+
+@media screen and (max-width: 650px){
+    header {
+	    position: fixed; 
+	    color: rgb(0, 0, 0);
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+	    padding: 10px 10px;
+        padding-right: 0px;
+	    z-index: 100000;
+        background-color: rgb(200, 200, 200);
+    }
+    header h1 {
+        font-size: 4vw;
+        padding-right: 10px;
+    }
+} 
+
+header.sticky {
+	padding: 5px 100px;
+	background: #ffffff;
+}
+
+header .logo {
+	position: relative;
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+	font-size: 1em;
+	font-family: headingFont;
+    font-weight: 1000;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+    padding-right: 20px;
+}
+
+header ul {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header ul li {
+	position: relative;
+	list-style: none;
+    justify-content: center;
+	align-items: center;
+}
+
+header ul li a {
+	position: relative;
+	margin: 0 14px;
+	text-decoration: none;
+	color: #000000;
+	letter-spacing: 2px;
+	font-weight: 500px;
+
+}
+
+header.sticky .logo,
+header.sticky ul li a {
+	color: #000;
+}
+
+li a.active,li a:hover{
+	color: white;
+} 
+
+.infoRecycling{
+	text-align: center;
+	width:100%;
+	border-color: #000000;
+	white-space: pre-line;
+	margin: 25% auto 30%;
+	object-fit: cover;
+	background-image: url("https://www.hightechrecyclingmi.com/wp-content/uploads/sites/124/2022/07/AdobeStock_500968458-680x312.jpeg");
+}
+
+#warning{
+	text-align: center;
+	color: crimson;
+}
+
+.mapRecycling{
+	text-align: center;
+	justify-content: center;
+}

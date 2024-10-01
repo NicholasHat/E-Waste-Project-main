@@ -18,13 +18,14 @@ body{
 	    top: 0;
 	    left: 0;
 	    width: 100%;
+        margin: 30px 0;
 	    display: flex;
 	    justify-content: space-between;
 	    align-items: center;
 	    padding: 10px 65px;
 	    z-index: 100000;
         transition: 0.5s;
-        background-color: rgb(200, 200, 200);
+        background-color: rgb(255, 255, 255);
     }
 }
 
@@ -41,13 +42,32 @@ body{
 	    padding: 10px 10px;
         padding-right: 0px;
 	    z-index: 100000;
-        background-color: rgb(200, 200, 200);
+        background-color: rgb(255, 255, 255);
     }
     header h1 {
         font-size: 4vw;
         padding-right: 10px;
     }
+    p {
+        font-size: 50px;
+    }
 } 
+
+#navbar h1 {
+    background: var(--primary-color);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    margin-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#navbar {
+    margin: 0;
+    padding-left: 0;
+    padding-top: 0;
+}
 
 
 header.sticky {
@@ -55,14 +75,18 @@ header.sticky {
 	background: #ffffff;
 }
 header .logo {
+    left: 0;
+    height: 100%;
+    width: 100%;
 	position: relative;
-	font-weight: 700;
+    background: var(--primary-color);
 	color: rgb(0, 0, 0);
 	text-decoration: none;
 	font-size: 1em;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-    padding-right: 20px;
+    font-family: headingFont;
+    font-weight: 1000;
 }
 
 header ul {
@@ -77,6 +101,8 @@ header ul li {
 	list-style: none;
     justify-content: center;
 	align-items: center;
+    font-family: headingFont;
+    font-weight: 1000;
 }
 
 header ul li a {
@@ -85,7 +111,6 @@ header ul li a {
 	text-decoration: none;
 	color: #000000;
 	letter-spacing: 2px;
-	font-weight: 500px;
 
 }
 
@@ -113,7 +138,7 @@ li a.active,li a:hover{
 }
 
 #welcomeInfo .contentText {
-    width: 360px;
+    width: 400px;
     height: fit-content;
     background:rgb(170, 170, 170);
     text-align: center;
@@ -131,9 +156,20 @@ li a.active,li a:hover{
     font-size: 40px;
     color:rgb(255,255,255);
 }*/
+@font-face {
+    font-family: headingFont;
+    src: url(Acme-Regular.ttf);
+}
+
+@font-face {
+    font-family: lowFont;
+    src: url(ABeeZee-Regular.ttf);
+  }
 
 #welcomeInfo .contentText p {
-    font-size: 20px;
+    font-size: 32px;
+    font-family: headingFont;
+    font-weight: 1000;
     color:rgb(255, 255, 255);
 }
 
@@ -265,6 +301,7 @@ li a.active,li a:hover{
 
 .footerBottom p {
     color: black;
+    font-size: 16px;
 }
 
 @media screen and (max-width: 500px) {
@@ -279,12 +316,12 @@ li a.active,li a:hover{
 }
 
 .websiteInfoContainer {
-    padding-bottom: 10%;
+    width: 100%;
+    padding-bottom: 22px;
     padding-left: 5%;
     padding-right: 5%;
-    background:rgb(213, 213, 213);
+    background: var(--primary-color);
     justify-content: center;
-    border: black 2px solid;
 }
 /*
 .websiteInfo {
@@ -299,28 +336,211 @@ li a.active,li a:hover{
 }*/
 
 .boxes {
-    border: black 2px solid;
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    background:rgb(170, 170, 170);
+    background: white;
     border-radius: 1em;
 }
 .box {
-    width: 400px;
-    height: 200px;
-    background:rgb(255, 255, 255);
-    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    height: auto;
+    background: white;
+    text-align: left;
     line-height: 200px;
     border-radius: 20px;
     margin: 25px 30px;
+    padding: 2em;
 }
 
+
+
+.box .boxTextTitle {
+    line-height: 32px;
+    font-size: 40px;
+    font-family: headingFont;
+    font-weight: 1000;
+}
+.box p {
+    padding-top: 2vw;
+    font-size: 20px;
+    line-height: 30px;
+    font-family: lowFont;
+}
+@media (max-width: 1200px) {
+    p {
+        font-size: 5px;
+    }
+
+}
 .title {
     justify-content: center;
     text-align: center;
     padding: 5em 0em;
+    font-family: headingFont;
+    font-weight: 1000;
+}
+
+.title h1 {
+    font-size: 40px;
+    font-family: headingFont;
+    font-weight: 1000;
+}
+
+
+/*sliding display*/
+
+.effects {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    background: url('Screenshot 2024-09-30 at 9.15.50 PM.png');
+    background-size: 100%;
+  }
+
+  .effects-category {
+    padding-top: 20px;
+    font-size: 30px;
+    line-height: 30px;
+    font-family: headingFont;
+    font-weight: 1000;
+    color: var(--secondary-color);
+  }
+  
+  .effectsTitle {
+    padding: 0 10vw;
+    font-size: 30px;
+    font-family: headingFont;
+    font-weight: 1000;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+  }
+  
+  .effects-container {
+    padding: 0 10vw;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 18px;
+  }
+  
+  .card {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 450px;
+    margin-right: 40px;
+    /*border: black 2px solid;*/
+    border-radius: 0.5em;
+    padding: 1em;
+    background: white;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    
+  }
+  
+  .pre-btn,
+  .nxt-btn {
+    border: none;
+    width: 10vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 8;
+    opacity: 1;
+    background: transparent;
+  }
+  
+  .pre-btn {
+    left: 0;
+    transform: rotate(180deg);
+  }
+  
+  .nxt-btn {
+    right: 0;
+  }
+  /*
+  .pre-btn img,
+  .nxt-btn img {
+    opacity: 0.2;
+  }*/
+  
+  .pre-btn:hover img,
+  .nxt-btn:hover img {
+    opacity: 1;
+  }
+
+  .futurePolicyGoals {
+    width:100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 15px;
+  }
+
+  .futurePolicyGoals .boxesText {
+    width: 60%;
+    padding-right:20px;
+  }
+
+  .futurePolicyGoals .visual {
+    min-width: 300px;
+    width: 40%;
+    height: 30vw;
+    max-height: 300px;
+    min-height: 200px;
+    border-radius: 1em;
+    background:rgb(255, 255, 255);
+    margin: 20px 0px;
+  }
+
+  .futurePolicyGoals .boxesText .areaTextTitle {
+    font-size: 20px;
+    line-height: 30px;
+    padding-bottom: 20px;
+    font-family: headingFont;
+    font-weight: 1000;
+  }
+
+  .futurePolicyGoals .boxesText p {
+    font-size: 20px;
+    line-height: 30px;
+    font-family: lowFont;
+  }
+
+  @media (max-width: 1200px) {
+    .futurePolicyGoals .boxesText p {
+        font-size: 16px;
+    }
+
+    .box p {
+        font-size: 16px;
+    }
+
+    .futurePolicyGoals {
+        flex-direction: column;
+    }
+  }
+
+  .futureGoals .websiteInfoContainer {
+    width: 100%;
+    padding: 5%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    background: var(--neutral-color);
+    justify-content: center;
+  }
+
+  :root {
+    --primary-color: #4682B4;  
+    --secondary-color: #FF7F50;
+    --neutral-color: #B0C4DE; 
 }
