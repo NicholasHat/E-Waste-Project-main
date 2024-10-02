@@ -1,8 +1,15 @@
 *{
+	margin: 0;
+  	padding: 0;
   	box-sizing: border-box;
 	font-family: sans-serif;
-	text-align: center;
 }
+body{
+	background: rgb(186, 235, 196);
+	min-height: 100vh;
+
+}
+
 @media screen and (min-width: 650px) {
     header {
 	    position: fixed; 
@@ -10,13 +17,14 @@
 	    top: 0;
 	    left: 0;
 	    width: 100%;
+        margin: 30px 0;
 	    display: flex;
 	    justify-content: space-between;
 	    align-items: center;
 	    padding: 10px 65px;
 	    z-index: 100000;
         transition: 0.5s;
-        background-color: rgb(200, 200, 200);
+        background-color: rgb(255, 255, 255);
     }
 }
 
@@ -33,29 +41,51 @@
 	    padding: 10px 10px;
         padding-right: 0px;
 	    z-index: 100000;
-        background-color: rgb(200, 200, 200);
+        background-color: rgb(255, 255, 255);
     }
     header h1 {
         font-size: 4vw;
         padding-right: 10px;
     }
+    p {
+        font-size: 50px;
+    }
 } 
+
+#navbar h1 {
+    background: #6dc2ff;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    margin-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#navbar {
+    margin: 0;
+    padding-left: 0;
+    padding-top: 0;
+}
+
 
 header.sticky {
 	padding: 5px 100px;
 	background: #ffffff;
 }
-
 header .logo {
+    left: 0;
+    height: 100%;
+    width: 100%;
 	position: relative;
+    background: #6dc2ff;
 	color: rgb(0, 0, 0);
 	text-decoration: none;
 	font-size: 1em;
-	font-family: headingFont;
-    font-weight: 1000;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-    padding-right: 20px;
+    font-family: headingFont;
+    font-weight: 1000;
 }
 
 header ul {
@@ -70,6 +100,8 @@ header ul li {
 	list-style: none;
     justify-content: center;
 	align-items: center;
+    font-family: headingFont;
+    font-weight: 1000;
 }
 
 header ul li a {
@@ -78,7 +110,6 @@ header ul li a {
 	text-decoration: none;
 	color: #000000;
 	letter-spacing: 2px;
-	font-weight: 500px;
 
 }
 
@@ -91,22 +122,39 @@ li a.active,li a:hover{
 	color: white;
 } 
 
-.infoRecycling{
+div.infoRecycling{
+	background: linear-gradient(0deg,rgb(186, 235, 196) 10%, transparent 50%),
+				url('https://t3.ftcdn.net/jpg/05/00/96/84/360_F_500968458_OGyQ9bVX0iG18R74csP1JBAvtxxaGYgs.jpg') no-repeat center center / cover;
+	width: 100%;
+	padding-bottom: 30vh;
 	text-align: center;
-	width:100%;
-	border-color: #000000;
-	white-space: pre-line;
-	margin: 25% auto 30%;
-	object-fit: cover;
-	background-image: url("https://www.hightechrecyclingmi.com/wp-content/uploads/sites/124/2022/07/AdobeStock_500968458-680x312.jpeg");
+	justify-content: center;
+	margin: 0% auto 10%;
 }
 
 #warning{
 	text-align: center;
+	margin: 10% auto;
 	color: crimson;
+	background: rgba(245, 245, 245, 0.7);
+	width:60%;
+	padding:5vh;
+	border-radius: 8vh;
+}
+.underInfo{
+	text-align: center;
+	margin: 10% auto;
+	justify-content: center;
+	border-color: rgb(0, 0, 0);
+	border-radius: 5px;
+	border-width: 5px;
+	background-color: whitesmoke;
+	padding: 10vh;
+	width: 70%;
 }
 
 .mapRecycling{
 	text-align: center;
 	justify-content: center;
+	margin: 10vh;
 }
