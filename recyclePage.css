@@ -2,10 +2,10 @@
 	margin: 0;
   	padding: 0;
   	box-sizing: border-box;
-	font-family: sans-serif;
+	font-family: lowFont;
 }
 body{
-	background: rgb(186, 235, 196);
+	background: #e5e6c4;
 	min-height: 100vh;
 
 }
@@ -123,38 +123,80 @@ li a.active,li a:hover{
 } 
 
 div.infoRecycling{
-	background: linear-gradient(0deg,rgb(186, 235, 196) 10%, transparent 50%),
+	background: linear-gradient(0deg,#e5e6c4 5%, transparent 50%),
 				url('https://t3.ftcdn.net/jpg/05/00/96/84/360_F_500968458_OGyQ9bVX0iG18R74csP1JBAvtxxaGYgs.jpg') no-repeat center center / cover;
 	width: 100%;
-	padding-bottom: 30vh;
+	padding: 30vh;
 	text-align: center;
 	justify-content: center;
 	margin: 0% auto 10%;
 }
 
+
 #warning{
 	text-align: center;
 	margin: 10% auto;
-	color: crimson;
-	background: rgba(245, 245, 245, 0.7);
-	width:60%;
+	color: rgb(60, 116, 68);
+	background-color: whitesmoke;
+	width:100%;
 	padding:5vh;
-	border-radius: 8vh;
+	box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.437);
 }
-.underInfo{
+#underInfo{
 	text-align: center;
 	margin: 10% auto;
 	justify-content: center;
 	border-color: rgb(0, 0, 0);
+	border-style: solid;
 	border-radius: 5px;
-	border-width: 5px;
+	border-width: 10px;
 	background-color: whitesmoke;
 	padding: 10vh;
-	width: 70%;
+	width: 100%;
+	box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.437);
 }
 
-.mapRecycling{
+
+
+html{
+	scroll-behavior: smooth;
+}
+
+#warningScroll{
+	text-decoration: none;
+	color: rgb(60, 116, 68);
+	border-style: solid;
+	border-color: black;
+	border-radius: 1vh;
+	border-width: 5px;
+	padding: 0.5vh;
+	background-color: rgb(154,195,106);
+}
+
+#warningScroll:hover{
+	border-color: rgb(60, 116, 68);
+	background-color: rgb(154,195,106);
+	color:whitesmoke;
+	transition: 0.3s;
+}
+
+#mapRecycling{
 	text-align: center;
 	justify-content: center;
-	margin: 10vh;
+	background-color: whitesmoke;
+	width:100%;
+	padding: 5vh 0vh;
+	margin-bottom: 20vh;
 }
+
+@font-face {
+    font-family: headingFont;
+    src: url(Acme-Regular.ttf);
+}
+
+@font-face {
+    font-family: lowFont;
+    src: url(ABeeZee-Regular.ttf);
+  }
+
+  

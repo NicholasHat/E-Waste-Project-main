@@ -129,7 +129,7 @@ li a.active,li a:hover{
     background-repeat: no-repeat;
     background-position: center;
     background-color: #ebe7c7;
-    background-image: url(92333ece-1eef-47db-a35f-90b37fc8de75.jpeg); 
+    /*background-image: url(92333ece-1eef-47db-a35f-90b37fc8de75.jpeg); */
 }
  
 #welcomeInfo .content {
@@ -168,7 +168,7 @@ li a.active,li a:hover{
 @font-face {
     font-family: lowFont;
     src: url(ABeeZee-Regular.ttf);
-  }
+}
 
 #welcomeInfo .contentText p {
     font-size: 40px;
@@ -510,7 +510,7 @@ li a.active,li a:hover{
 
   .futurePolicyGoals .visual1 {
     min-width: 300px; 
-    width: 40%;
+    width: 30vw;
     height: 30vw;
     max-height: 300px;
     min-height: 200px;
@@ -576,4 +576,7 @@ li a.active,li a:hover{
 }
 .websiteInfoContainer .socialIcons a {
     background: var(--secondary-color);
+}
+
+.realLogo {
 }
