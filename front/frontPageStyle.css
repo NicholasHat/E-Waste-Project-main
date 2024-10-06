@@ -162,12 +162,12 @@ li a.active,li a:hover{
 }*/
 @font-face {
     font-family: headingFont;
-    src: url(Acme-Regular.ttf);
+    src: url(../font/Acme-Regular.ttf);
 }
 
 @font-face {
     font-family: lowFont;
-    src: url(ABeeZee-Regular.ttf);
+    src: url(../font/ABeeZee-Regular.ttf);
 }
 
 #welcomeInfo .contentText p {
@@ -415,7 +415,7 @@ li a.active,li a:hover{
     position: relative;
     overflow: hidden;
     padding: 20px;
-    background: url('Screenshot 2024-09-30 at 9.15.50 PM.png');
+    background: url('../images/Screenshot 2024-09-30 at 9.15.50 PM.png');
     background-size: 100%;
   }
 

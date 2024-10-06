@@ -33,7 +33,7 @@ let gpuDataLoad = false;
 
 function getComputerInfo() {
 
-    fetch('gpu.txt')
+    fetch('../data/gpu.txt')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -64,7 +64,7 @@ function getComputerInfo() {
             console.error('Error fetching the file:', error);
         });
 
-    fetch('cpu.txt')
+    fetch('../data/cpu.txt')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -101,7 +101,7 @@ function getComputerInfo() {
             console.error('Error fetching the file:', error);
         });
     
-    fetch('battery.txt')
+    fetch('../data/battery.txt')
         .then(response => {
             if(!response.ok) {
                 throw new Error('Network response was not ok');
@@ -137,7 +137,7 @@ function getComputerInfo() {
             console.error('Error fetching the file:', error);
         });
     
-    fetch('computer.txt')
+    fetch('../data/computer.txt')
         .then(response => {
             if(!response.ok) {
                 throw new Error('Network response was not ok');
@@ -171,7 +171,7 @@ function getComputerInfo() {
         });
 
     function recycleLink(element) {
-        const recycleLink = elementFromHtml("<a href='recyclePage.html' style='font-family: lowFont;'> Go Recycle</a>");
+        const recycleLink = elementFromHtml("<a href='../recycle/recyclePage.html' style='font-family: lowFont;'> Go Recycle</a>");
         element.appendChild(recycleLink);
     }
     

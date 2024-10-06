@@ -202,12 +202,12 @@ li a.active,li a:hover{
 
 @font-face {
     font-family: headingFont;
-    src: url(Acme-Regular.ttf);
+    src: url(../font/Acme-Regular.ttf);
 }
 
 @font-face {
     font-family: lowFont;
-    src: url(ABeeZee-Regular.ttf);
+    src: url(../font/ABeeZee-Regular.ttf);
 }
 
 .computerSpecs {
