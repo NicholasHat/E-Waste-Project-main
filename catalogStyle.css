@@ -283,9 +283,11 @@ li a.active,li a:hover{
 .title {
     height: auto;
     width: 100%;
-    line-height: 60px;
+    line-height: 30px;
     font-size: 20px;
     padding: 0 50px;
+    font-weight: 900;
+    font-family: headingFont;
 }
 
 .text {
@@ -293,6 +295,7 @@ li a.active,li a:hover{
     height: auto;
     padding: 0 50px;
     font-size: 18px;
+    font-family: lowFont;
 }
 
 .dividingLine {
@@ -304,6 +307,8 @@ li a.active,li a:hover{
     line-height: 60px;
     font-size: 19px;
     padding: 0 50px;
+    font-weight: 900;
+    font-family: lowFont;
 }
 
 .miniLine {

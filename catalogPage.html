@@ -8,7 +8,7 @@
     <header id="navbar">
 	<h1><a href="frontPage.html" class="logo">Comp.Name</a></h1>
 	<ul>
-		<li class="recyclePage"><a href="recyclePage.html">Recycle</a></li>
+		<li class=""><a href="catalogPage.html">Catalog</a></li>
 		<li><a href="">Temp</a></li>
         <li><a href="">Temp</a></li>
 	</ul>
@@ -41,13 +41,13 @@
                 <!--buttons: all white background-->
                 <h1>Enter your computer specs</h1>
                 <div class="inputCont">
-                    <input type="text" class="input" id="computerI" placeholder="computer name">
-                    <input type="text" class="input" id="batteryI" placeholder="battery/power supply unit name">
-                    <input type="text" class="input" id="cpuI" placeholder="cpu name">
-                    <input type="text" class="input" id="gpuI" placeholder="gpu name">
+                    <input type="text" class="input" id="cInput" placeholder="computer name">
+                    <input type="text" class="input" id="batInput" placeholder="battery/power supply unit name">
+                    <input type="text" class="input" id="cpuInput" placeholder="cpu name">
+                    <input type="text" class="input" id="gpuInput" placeholder="gpu name">
                 </div>
 
-                <button>submit</button>
+                <button onclick="getComputerInfo()">submit</button>
                 
             </div>
             
@@ -55,25 +55,35 @@
                 the ones you type in and generals being the ones that are not unique like RAM(results by computer 
                 company), motherboard kinda same as RAM and cpu, results
                 should show company trade in programs for specifics, display sell and trade in websites-->
-                <hr class="dividingLine">
-                <div class="title">Computer</div>
+                <div id="divLn"></div>
+                <!--<hr class="dividingLine">-->
+                <div class="title" id="cTitle"></div>
                 <!--short thing about keeping comuters in good condition-->
-                <div class="text">all white background: split into generals and specifcs, specifcs being the ones you type in and generals being the ones that are not unique like RAM(results by computer company), motherboard kinda same as RAM and cpu, results should show company trade in programs for specifics, display sell and trade in websites</div>
-                <div class="miniTitle">Ways to Dispose your Computer</div>
-                <div class="text">all white background: split into generals and specifcs, specifcs being the ones you type in and generals being the ones that are not unique like RAM(results by computer company), motherboard kinda same as RAM and cpu, results should show company trade in programs for specifics, display sell and trade in websites</div>
-                <hr class="miniLine">
-                <div class="title">Battery/Power Supply Unit</div>
-                <div class="miniTitle">Keeping your Battery/Power Supply Unit Working</div>
-                <div class="text">all white background: split into generals and specifcs, specifcs being the ones you type in and generals being the ones that are not unique like RAM(results by computer company), motherboard kinda same as RAM and cpu, results should show company trade in programs for specifics, display sell and trade in websites</div>
-                <div class="miniTitle">Ways to Dispose of your Battery/Power Supply</div>
-                <div class="text">all white background: split into generals and specifcs, specifcs being the ones you type in and generals being the ones that are not unique like RAM(results by computer company), motherboard kinda same as RAM and cpu, results should show company trade in programs for specifics, display sell and trade in websites</div>
-                <hr class="miniLine">
-                <div class="title">Motherboard</div>
-                <div class="miniTitle">Keeping your Motherboard In Good Condition</div>
-                <div class="text">all white background: split into generals and specifcs, specifcs being the ones you type in and generals being the ones that are not unique like RAM(results by computer company), motherboard kinda same as RAM and cpu, results should show company trade in programs for specifics, display sell and trade in websites</div>
-                <div class="miniTitle">Ways to Dispose of your Motherboard</div>
-                <div class="text">all white background: split into generals and specifcs, specifcs being the ones you type in and generals being the ones that are not unique like RAM(results by computer company), motherboard kinda same as RAM and cpu, results should show company trade in programs for specifics, display sell and trade in websites</div>
-                <hr class="miniLine">
+                <div class="text" id="cLongevityText"></div>
+                <div class="miniTitle" id="cDisposalTitle"></div>
+                <div class="text" id="cDisposalText"></div>
+                <div id="cLn"></div>
+                <!--<hr class="miniLine">-->
+                <div class="title" id="batTitle"></div>
+                <div class="miniTitle" id="batLongevityTitle"></div>
+                <div class="text" id="batLongevityText"></div>
+                <div class="miniTitle" id="batDisposalTitle"></div>
+                <div class="text" id="batDisposalText"></div>
+                <div id="batLn"></div>
+                <!--<hr class="miniLine">-->
+                <div class="title" id="cpuTitle"></div>
+                <div class="miniTitle" id="cpuLongevityTitle"></div>
+                <div class="text" id="cpuLongevityText"></div>
+                <div class="miniTitle" id="cpuDisposalTitle"></div>
+                <div class="text" id="cpuDisposalText"></div>
+                <div id="cpuLn"></div>
+                <!--<hr class="miniLine">-->
+                <div class="title" id="gpuTitle"></div>
+                <div class="miniTitle" id="gpuLongevityTitle"></div>
+                <div class="text" id="gpuLongevityText"></div>
+                <div class="miniTitle" id="gpuDisposalTitle"></div>
+                <div class="text" id="gpuDisposalText"></div>
+                
                 
                 </div>
             </div>
@@ -102,6 +112,6 @@
         </div>
         </footer>
         
-        <script src="frontPageScript.js"></script>
+        <script src="catalogScript.js"></script>
     </body>
 </html>
