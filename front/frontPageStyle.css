@@ -128,8 +128,9 @@ li a.active,li a:hover{
     height: screen;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #ebe7c7;
-    /*background-image: url(92333ece-1eef-47db-a35f-90b37fc8de75.jpeg); */
+    /*background-color: #ebe7c7;*/
+    background-image: url(../images/backgroundTest1.png); 
+    
 }
  
 #welcomeInfo .content {
