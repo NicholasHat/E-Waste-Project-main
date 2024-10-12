@@ -33,32 +33,29 @@ let gpuDataLoad = false;
 
 function getComputerInfo() {
 
-    fetch('../data/gpu.txt')
+    fetch('../data/gpu.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            return response.text();
+            return response.json();
         })
         .then(data => {
             const gpu = gpuInput.value;
-            const gpuLines = data.split('\n');
-            for (let i = 0; i < gpuLines.length; i++) {
-                if (gpuLines[i].toLowerCase().includes(gpu.toLowerCase().trim()) && gpu!='') {
-                    checkForDividingLine();
+            const object = data;
+            Object.keys(object).forEach(property => {
+                console.log(property);
+                if (property.toLowerCase().includes(gpu.toLowerCase().trim()) && gpu!='') {
                     gpuDataLoad = true;
-                    gpuTitle.innerText = gpuLines[i];
-                    
-                    const gpuLongLines = gpuLines[i+1].split(',');
-                    gpuLongevityTitle.innerText = gpuLongLines[0];
-                    gpuLongevityText.innerText = gpuLongLines[1];  
+                    gpuTitle.innerText = property;
+                    gpuLongevityTitle.innerText = object[property]["descriptionTitleOne"];
+                    gpuLongevityText.innerText = object[property]["descriptionTextOne"];
 
-                    const gpuDispLines = gpuLines[i+2].split(','); 
-                    gpuDisposalTitle.innerText = gpuDispLines[0];
-                    gpuDisposalText.innerText = gpuDispLines[1];
+                    gpuDisposalTitle.innerText = object[property]["descriptionTitleTwo"];
+                    gpuDisposalText.innerText = object[property]["descriptionTextTwo"];
                     recycleLink(gpuDisposalText);
                 }
-            }
+            })
         })
         .catch(error => {
             console.error('Error fetching the file:', error);
