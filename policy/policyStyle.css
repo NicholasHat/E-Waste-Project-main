@@ -67,7 +67,7 @@ body{
     margin: 0;
     padding-left: 0;
     padding-top: 0;
-    background: linear-gradient(to right, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
+    background:linear-gradient(to right, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
 }
 
 
@@ -218,204 +218,69 @@ li a.active,li a:hover{
     src: url(../font/ABeeZee-Regular.ttf);
 }
 
-.computerSpecs {
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    background: white;
-    text-align: center;
-    padding: 10% 0;
-}
-
-.computerSpecs .title {
-    /*width: 100%;
-    height: auto;
-    margin-top: 20px;
-    padding: 3em;
-    font-size: 50px;
-    text-align: center;*/
-    font-size: 100px;
-    height: 50px;
-    align-items: center;
-}
-/*
-.both-slide {
-    display: inline-block;
-    animation: 25s slide infinite linear;
-}*/
-
-.both {
-    width: 100%;
-    height: 200px;
-    white-space: nowrap;
-    background: linear-gradient(to right, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
-    align-items: center;
-    text-align: center;
-}
-
-.title p {
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size: 30px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    color: white;
-    line-height: 200px;
-    text-align: center;
-    
-}
-.both-slide {
-    text-align: center;
-}
-
-.input {
-    border-radius: 1em;
-    border: var(--secondary-color) 3px solid;
-    line-height: 50px;
-    font-size: 14px;
-    text-indent: 20px;
-    font-family: lowFont;
-    margin: 10px 30px;
-    width: 240px;
-    transition: 0.4s;
-}
-
-.input:hover {
-    border-color: var(--primary-color);
-    transition: 0.4s;
-}
-
-.input:active {
-    border-width: 6px;
-    transition: 0.4s;
-}
-
-.inputCont {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding: 2em;
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-}
-
-.computerSpecs h1 {
-    font-family: headingFont;
-    padding: 10px 0;
-    font-size: 20px;
-}
-
-.computerSpecs button {
-    width: 150px;
-    padding: 10px;
-    background: var(--secondary-color);
-    border-radius: 10px;
-    font-family: headingFont;
-    font-size: 15px;
-    justify-self: center;
-    cursor: pointer;
-    margin-bottom: 20px;
-    border: var(--secondary-color) 2px solid;
-}
-
-.computerSpecs button:hover{
-    border: var(--primary-color) 2px solid;
-}
-
-.results {
-    background: white;
-    width: 100%;
-    height: auto;
-    
-}
-
-.title {
-    height: auto;
-    width: 100%;
-    line-height: 30px;
-    font-size: 20px;
-    padding: 0 50px;
-    font-weight: 900;
-    font-family: headingFont;
-}
-
-.text {
-    width: 100%;
-    height: auto;
-    padding: 0 50px;
-    font-size: 18px;
-    font-family: lowFont;
-}
-
-.dividingLine {
-    margin: 0 20px;
-    border-bottom: 3px solid black;
-}
-
-.miniTitle {
-    line-height: 60px;
-    font-size: 19px;
-    padding: 0 50px;
-    font-weight: 900;
-    font-family: lowFont;
-}
-
-.miniLine {
-    margin: 10px 25em;
-    border-bottom: 3px solid black;
-}
 
 header .logo:hover {
     color:rgb(255, 255, 255);
 }
 
+.mainCont {
+    justify-self: center;
+    padding-top: 30px;
+    width: 80%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    text-align: center;
+    border-radius: 5em;
+    padding: 5%;
+}
+
+.title {
+    font-size: 30px;
+    color: var(--primary-color);
+    font-family: headingFont;
+}
+
+.text {
+    margin: 20px 20%;
+    font-family: lowFont;
+    color: black;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.miniTitle {
+    padding: 22px;
+    font-size: 20px;
+    font-family: lowFont;
+}
+
+.fullCont {
+    padding-top: 30px;
+    width: screen;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+hr {
+    border: black 1px solid;
+}
 .cool-font{
     font-family: headingFont;
     }
     
-    .typing::after {
+.typing::after {
         content: "|";
         animation: blink 1s infinite;
         margin-left: 3px;
         display: inline-block;
     }
     
-    @keyframes blink {
+@keyframes blink {
         50% {
           opacity: 0;
         }
-}
-
-@keyframes slide {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-100%);
-    }
-}
-#modal {
-    color: black;
-    background-color: rgba(0, 0, 0, 0.311);
-    margin-top: -10vh;
-    margin-left: 28vh;
-    margin-right: auto;
-    margin-bottom: -50vh;
-    justify-content: center;
-    text-align: center;
-    padding: 5vh 1vh;
-    width: 60vh;
-    border-radius: 2vh;
-    /* display: none; */
-    opacity: 0;
-    display: none;
-    box-shadow: 2px 2px 8px rgb(0, 0, 0);
-    animation: opac 0.3s forwards;
-  }
-@keyframes opac{
-  100%  {
-    opacity: 1;
-  }
 }

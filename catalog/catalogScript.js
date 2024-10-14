@@ -13,6 +13,7 @@ const batLongevityTitle = document.getElementById('batLongevityTitle');
 const batLongevityText = document.getElementById('batLongevityText');
 const batDisposalTitle = document.getElementById('batDisposalTitle');
 const batDisposalText = document.getElementById('batDisposalText');
+const batGeneral = document.getElementById('batGeneral');
 const cpuTitle = document.getElementById('cpuTitle');
 const cpuLongevityTitle = document.getElementById('cpuLongevityTitle');
 const cpuLongevityText = document.getElementById('cpuLongevityText');
@@ -23,11 +24,13 @@ const gpuLongevityTitle = document.getElementById('gpuLongevityTitle');
 const gpuLongevityText = document.getElementById('gpuLongevityText');
 const gpuDisposalTitle = document.getElementById('gpuDisposalTitle');
 const gpuDisposalText = document.getElementById('gpuDisposalText');
-
+const batGeneralDisposal = document.getElementById('batGeneralDisposal');
 
 let batDataLoad = false;
 let cpuDataLoad = false;
 let gpuDataLoad = false;
+
+
 
 /*use for loop to search through each word in input prompt, use break if word found to exit loop*/
 
@@ -94,6 +97,7 @@ function getComputerInfo() {
                     cpuDisposalTitle.innerText = cpuDispLines[0];
                     cpuDisposalText.innerText = cpuDispLines[1];
                     recycleLink(cpuDisposalText);
+                    break;
                 }
             }
         })
@@ -121,15 +125,20 @@ function getComputerInfo() {
                     checkForDividingLine();
                     batDataLoad = true;
                     batTitle.innerText = batLines[i];
-                        
                     const batLongLines = batLines[i+1].split(',');
+                    console.log(batLines[i+1]);
                     batLongevityTitle.innerText = batLongLines[0];
-                    batLongevityText.innerText = batLongLines[1];
+                    batLongevityText.innerHTML = batLongLines[1];
+                    batGeneral.innerHTML = "<div class='text'><br>UPDATE SOFTWARE: Keep your operating system and drivers updated, as optimizations can improve battery management. <br>BATTERY HEALTH MONITORING: Use software tools to monitor battery health and usage patterns, allowing you to adjust settings for better longevity. <br>AVOID CONSTANT PLUGGING: While it’s okay to keep the laptop plugged in, try not to do so constantly; occasional discharging is beneficial.</div>";
+                    
 
                     const batDispLines = batLines[i+2].split(','); 
                     batDisposalTitle.innerText = batDispLines[0];
-                    batDisposalText.innerText = batDispLines[1];
+                    batDisposalText.innerHTML = batDispLines[1];
+                    batGeneralDisposal.innerHTML = "<div class='text'><br>KEEP BATTERIES SAFE: When transporting used batteries for disposal, keep them in a plastic bag or a battery container to prevent short-circuiting.<br>AVOID INCIERNATION: Never burn batteries as this can cause toxic fumes and explosions.<br>CHECK LOCAL REGULATIONS: Always check local regulations regarding battery disposal and recycling, as guidelines can vary by location.</div>"
                     recycleLink(batDisposalText);
+
+                    break;
                 }
             }
         })
@@ -163,22 +172,43 @@ function getComputerInfo() {
                     cDisposalTitle.innerText = cDispLines[0];
                     cDisposalText.innerText = cDispLines[1];
                     recycleLink(cDisposalText);
+                    break;
                 }
             }
         })
         .catch(error => {
             console.error('Error fetching the file:', error);
         });
+        
+    function clicky(){
+        console.log('ruff');
+    }
 
     function recycleLink(element) {
-        const recycleLink = elementFromHtml("<a href='../recycle/recyclePage.html' style='font-family: lowFont;'> Go Recycle</a>");
+        const recycleLink = elementFromHtml("<button style='background-color:gray;' onclick='clicky()' >push me</button>");
+        
         element.appendChild(recycleLink);
+    }
+
+    //adds event listener for modal
+    function startModal() {
+        document.getElementById('modalButton').addEventListener('click', function(e) {
+            if(document.getElementById('modal').style.display == 'none'){
+                document.getElementById('modal').style.display = 'block';
+            }
+            else{
+                
+                document.getElementById('modal').style.display = 'none';
+            }
+            console.log("hi");
+        })
     }
     
     function elementFromHtml(html) {
         const template = document.createElement("template");
 
         template.innerHTML = html.trim();
+        
         
         return template.content.firstElementChild;
     }

@@ -4,13 +4,13 @@
         <link rel="stylesheet" type="text/css" href="../front/frontPageStyle.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <header id="navbar">
-	<h1><a href="../front/frontPage.html" class="logo">Comp.Name</a></h1>
+    <header id="navbar" class = "w-full shadow-lg">
+	<h1><a href="../front/frontPage.html" class="logo text-3xl">TechCycler</a></h1>
 	<ul>
-		<li class=""><a href="../catalog/catalogPage.html">Catalog</a></li>
-		<li><a href="">Temp</a></li>
-        <li><a href="">Temp</a></li>
+		<li ><a href="../catalog/catalogPage.html" class="cool-font text-2xl">Catalog</a></li>
+        <li><a href="../policy/policyPage.html" class="cool-font text-2xl">Policy Change</a></li>
 	</ul>
     <script type="text/javascript">
         var lastScrollTop = 0;
@@ -27,27 +27,18 @@
         })
     </script>
 	</header>
-
+    
     <body>
         <div id="welcomeInfo">
-            
-            <div class="content">
-
+            <div class="content shadow-lg">
                 <div class="contentText">
                     <div class="contentHeader">
-                        <p>PROTECT THE ENVIRONMENT FROM ELECTRONIC WASTE</p>
+                        <p id="animated" style="color: black">Don't let your electronic waste <span id="description" class="typing inline-block cool-font"></span></p> 
                     </div>
-                    <div><!--computer screen surrounded by white and on the screen is earth -->
-                        <img src="../images/fe33be3f-9b5d-48fe-9fa3-f3a35c9488ba-removebg-preview.png" width="200px" class="realLogo">
-                    </div>
-                </div>
-
-                <div class="contentImage">
-                 <!--<img src=""> DISPLAYS IMAGE BY GRAY BOX-->
                 </div>
             </div>
         </div>
-        <div class="websiteInfoContainer">
+        <div class="w-full bg-blue-500 shadow-2xl border-dashed border-black ">
             <div class="title">
                 <h1>JOIN THE MISSION!</h1>
             </div>
@@ -58,10 +49,10 @@
                 <a href=""><i class="fa-brands fa-google-plus"></i></a>
                 <a href=""><i class="fa-brands fa-youtube"></i></a>
             </div>
-            <div class="websiteInfo">
+            <div class="w-full bg-blue-100 shadow-2xl border-dashed">
                 <div class="boxes">
                     <div class="box">
-                        <div class="boxTextTitle">Increasing Computer <span class="boxTextTitle" style="color:  #4682B4">Life</span> Expectancy
+                        <div class="boxTextTitle">Increasing Computer <span class="boxTextTitle" style="color:  #60edd9">Life</span> Expectancy
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
@@ -114,13 +105,11 @@
                 
             </section>
 
-            
-
-            <div class="futureGoals">
+            <div class="futureGoals ">
                 <div class="websiteInfoContainer" id="ftgoals">
                     <div class="websiteInfo">
-                        <div class="boxes">
-                            <div class="futurePolicyGoals">
+                        <div class="boxes" id="appea">
+                            <div class="futurePolicyGoals shadow-lg">
                                 <div class="boxesText">
                                     <div class="areaTextTitle">BOOST LONGEVITY</div>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -129,7 +118,7 @@
                                     <img src="../images/techmaintain.png" height="100%" style="border-radius: 50%;">
                                 </div>
                             </div>
-                            <div class="futurePolicyGoals">
+                            <div class="futurePolicyGoals shadow-lg">
                                 <div class="boxesText">
                                     <div class="areaTextTitle">CHOOSE RECYCLING</div>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -168,10 +157,36 @@
                 
         </div>
         <div class="footerBottom">
-            <p>Copyright &copy; 2024 TempName</p>
+            <p>Copyright &copy; 2024 TechCycler</p>
         </div>
         </footer>
         
         <script src="../front/frontPageScript.js"></script>
+        <script>
+                  const phrases = ["pollute our water", "leech toxic metals", "float in a landfill"];
+      let phraseIndex = 0;
+      let charIndex = 0;
+      const description = document.getElementById("description");
+      function typePhrase() {
+        if (charIndex < phrases[phraseIndex].length) {
+          description.textContent += phrases[phraseIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(typePhrase, 100);
+        } else {
+          setTimeout(deletePhrase, 2000);
+        }
+      }
+      function deletePhrase() {
+        if (charIndex > 0) {
+          description.textContent = description.textContent.slice(0, -1);
+          charIndex--;
+          setTimeout(deletePhrase, 100);
+        } else {
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(typePhrase, 500);
+        }
+      }
+      typePhrase();
+        </script>
     </body>
 </html>

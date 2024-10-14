@@ -6,7 +6,7 @@
 	font-family: sans-serif;
 }
 body{
-	background: #ebe7c7;
+	background: white;
 	min-height: 100vh;
     padding-top: 50px;
 }
@@ -54,7 +54,6 @@ body{
 } 
 
 #navbar h1 {
-    background: #6dc2ff;
     width: 100%;
     height: 100%;
     left: 0;
@@ -67,6 +66,7 @@ body{
     margin: 0;
     padding-left: 0;
     padding-top: 0;
+    background: linear-gradient(to right, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
 }
 
 
@@ -75,18 +75,20 @@ header.sticky {
 	background: #ffffff;
 }
 header .logo {
-    left: 0;
+    left: 40px;
     height: 100%;
     width: 100%;
 	position: relative;
-    background: #6dc2ff;
 	color: rgb(0, 0, 0);
 	text-decoration: none;
-	font-size: 1em;
 	text-transform: uppercase;
 	letter-spacing: 2px;
     font-family: headingFont;
     font-weight: 1000;
+}
+
+header .logo:hover {
+    color:rgb(255, 255, 255);
 }
 
 header ul {
@@ -124,22 +126,28 @@ li a.active,li a:hover{
 } 
 
 #welcomeInfo {
-    width: auto;
-    height: screen;
     background-repeat: no-repeat;
     background-position: center;
     /*background-color: #ebe7c7;*/
-    background-image: url(../images/backgroundTest1.png); 
-    
+    background-size: 100%;
+    height: screen;
+    width: 100%;
+    background: url('hotAirBalloons.png');
 }
  
 #welcomeInfo .content {
     width: 100%;
-    height: auto;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    padding-top: -100px;
+    background-size: 90%;
+    background-position: center;
+    background-image: url('../images/lessHotAirBalloons.png');
+    background-repeat: no-repeat;
 }
 
 #welcomeInfo .contentText {
@@ -151,10 +159,14 @@ li a.active,li a:hover{
     margin: 15px 30px;
     font-size: 50px;
     padding: 20px 10px;
-    align-items: center;
+    /*align-items: center;
     align-self: center;
     justify-content: center;
-    justify-self: center;
+    justify-self: center;*/
+}
+
+#welcomeInfo .contentHeader p {
+    color: black;
 }
 /*
 #welcomeInfo .contentHeader p { /* NEW STUFF I ADDED 
@@ -183,21 +195,6 @@ li a.active,li a:hover{
 }
 
 
-/* BIG GRAY BLOCK */
-#welcomeInfo .contentImage {    
-    width: 900px;
-    height: 550px;
-    background:transparent;
-    text-align: center;
-    line-height: 200px;
-    border-radius: 20px;
-    margin-top: 30px;
-    margin: 0px 15px;
-    margin-bottom: 10%;;
-    justify-content: center;
-    align-content: center;
-    
-}
 
 #welcomeInfo .contentImage img { /* Image size & borders */
     width: 700px;
@@ -279,6 +276,16 @@ li a.active,li a:hover{
     border-radius: 50%;
 }
 
+.socialIcons a:hover {
+    background-color: white;
+    transition: 0.2s;
+}
+
+.socialIcons a i:hover {
+    color: black;
+    transition: 0.2s;
+}
+
 .socialIcons a i {
     font-size: 2em;
     color: white;
@@ -330,8 +337,8 @@ li a.active,li a:hover{
     padding-bottom: 22px;
     padding-left: 5%;
     padding-right: 5%;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
     background: var(--primary-color);
     justify-content: center;
 }
@@ -366,7 +373,21 @@ li a.active,li a:hover{
     justify-content: center;
     background: white;
     border-radius: 1em;
+    padding:10px;
 }
+
+.futureGoals .boxes {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: white;
+    border-radius: 1em;
+    padding:10px;
+}
+
 .box {
     width: 90%;
     max-width: 800px;
@@ -426,7 +447,7 @@ li a.active,li a:hover{
     line-height: 30px;
     font-family: headingFont;
     font-weight: 1000;
-    color: var(--secondary-color);
+    color: #ac59f3;
   }
   
   .effectsTitle {
@@ -502,26 +523,33 @@ li a.active,li a:hover{
     justify-content: center;
     align-items: center;
     margin: 0px 15px;
+    border-radius: 20px;
   }
 
   .futurePolicyGoals .boxesText {
     width: 60%;
     padding-right:20px;
+    align-items: center;
   }
 
   .futurePolicyGoals .visual1 {
     min-width: 300px; 
     width: 30vw;
     height: 30vw;
-    max-height: 300px;
+    max-height: 100%;
     min-height: 200px;
     border-radius: 1em;
     margin: 20px 0px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
   }
 
   .futurePolicyGoals .boxesText .areaTextTitle {
     font-size: 20px;
     line-height: 30px;
+    padding-top: 20px;
     padding-bottom: 20px;
     font-family: headingFont;
     font-weight: 1000;
@@ -559,9 +587,9 @@ li a.active,li a:hover{
   .futureGoals .websiteInfoContainer {
     width: 100%;
     padding: 5%;
-    padding-top: 10%;
+    padding-top: 5vh;
     padding-bottom: 10%;
-    background: var(--neutral-color);
+    background: #60edd9;
     justify-content: center;
   }
 
@@ -579,5 +607,27 @@ li a.active,li a:hover{
     background: var(--secondary-color);
 }
 
+.websiteInfoContainer .socialIcons a:hover {
+    background:#ffbba2;
+    transition: 0.5s;
+}
+
 .realLogo {
 }
+
+.cool-font{
+font-family: headingFont;
+}
+
+.typing::after {
+	content: "|";
+	animation: blink 1s infinite;
+	margin-left: 3px;
+	display: inline-block;
+}
+
+@keyframes blink {
+	50% {
+	  opacity: 0;
+	}
+  }

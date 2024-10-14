@@ -14,3 +14,7 @@ productContainers.forEach((item, i) => {
         item.scrollLeft -= containerWidth;
     })
 })
+
+function openMap() {
+    window.open("../map/map.html", "PopupWindow", "width=800,height=800");
+}
