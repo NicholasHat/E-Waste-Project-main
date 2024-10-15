@@ -68,6 +68,7 @@ body{
     padding-left: 0;
     padding-top: 0;
     background: linear-gradient(to right, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
+    width: 100%;
 }
 
 
@@ -309,18 +310,19 @@ li a.active,li a:hover{
 .computerSpecs button {
     width: 150px;
     padding: 10px;
-    background: var(--secondary-color);
+    background: 59a2f5;
     border-radius: 10px;
     font-family: headingFont;
     font-size: 15px;
     justify-self: center;
     cursor: pointer;
     margin-bottom: 20px;
-    border: var(--secondary-color) 2px solid;
+    border: #59a2f5 2px solid;
+    background-color: #59a2f5;
 }
 
 .computerSpecs button:hover{
-    border: var(--primary-color) 2px solid;
+    border: white 2px solid;
 }
 
 .results {
@@ -374,6 +376,15 @@ li a.active,li a:hover{
 
 header .logo:hover {
     color:rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 700px) {
+    header .logo {
+        font-size: 20px;
+    }
+    #navbar li a {
+        font-size: 17px;
+    }
 }
 
 .cool-font{

@@ -284,3 +284,12 @@ hr {
           opacity: 0;
         }
 }
+
+@media screen and (max-width: 700px) {
+    header .logo {
+        font-size: 20px;
+    }
+    #navbar li a {
+    font-size: 17px;
+    }
+}

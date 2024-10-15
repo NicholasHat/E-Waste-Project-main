@@ -674,3 +674,12 @@ font-family: headingFont;
     color: white;
     transform: rotateY(180deg);
   }
+
+@media screen and (max-width: 700px) {
+    header .logo {
+        font-size: 20px;
+    }
+    #navbar li a {
+    font-size: 17px;
+    }
+}

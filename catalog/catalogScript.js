@@ -46,7 +46,7 @@ let gpuDataLoad = false;
 /*use for loop to search through each word in input prompt, use break if word found to exit loop*/
 
 function getComputerInfo() {
-
+    doMap();
     fetch('../data/gpu.txt')
         .then(response => {
             if (!response.ok) {
@@ -56,11 +56,12 @@ function getComputerInfo() {
         })
         .then(data => {
             const gpu = gpuInput.value;
+            const gpuValues = gpu.split(' ');
             const gpuLines = data.split('\n');
             for (let i = 0; i < gpuLines.length; i++) {
-                if (gpuLines[i].toLowerCase().includes(gpu.toLowerCase().trim()) && gpu!='') {
+                if (gpuLines[i].toLowerCase().includes(gpuValues[0].toLowerCase().trim()) && gpu!='') {
                     checkForDividingLine();
-                    doMap();
+                    
                     gpuDataLoad = true;
                     gpuTitle.innerText = gpuLines[i];
                     
@@ -90,16 +91,17 @@ function getComputerInfo() {
         })
         .then(data => {
             const cpu = cpuInput.value;
+            const cpuValues = cpu.split(' ');
             const cpuLines = data.split('\n');
             console.log('why');
             for (let i = 0; i < cpuLines.length; i++) {
-                if (cpuLines[i].toLowerCase().includes(cpu.toLowerCase().trim()) && cpu!='') {
+                if (cpuLines[i].toLowerCase().includes(cpuValues[0].toLowerCase().trim()) && cpu!='') {
                     if (document.getElementById('cpuLn').innerHTML == '' && gpuDataLoad) {
                         const miniLine = elementFromHtml("<hr style='margin: 10px 25em; border-bottom: 3px solid black;'>");
                         document.getElementById('cpuLn').appendChild(miniLine);
                     }
                     checkForDividingLine();
-                    doMap();
+                    
                     cpuDataLoad = true;
 
                     cpuTitle.innerText = cpuLines[i];
@@ -129,16 +131,17 @@ function getComputerInfo() {
         })
         .then(data => {
             const bat = batInput.value;
+            const batValues = bat.split(' ');
             const batLines = data.split('\n');
             console.log('why');
             for(let i = 0; i < batLines.length; i++) {
-                if(batLines[i].toLowerCase().includes(bat.toLowerCase().trim()) && bat!='') {
+                if(batLines[i].toLowerCase().includes(batValues[0].toLowerCase().trim()) && bat!='') {
                     if(document.getElementById('batLn').innerHTML == '' && (cpuDataLoad || gpuDataLoad)) {
                         const miniLine = elementFromHtml("<hr style='margin: 10px 25em; border-bottom: 3px solid black;'>");
                         document.getElementById('batLn').appendChild(miniLine);
                     }
                     checkForDividingLine();
-                    doMap();
+                    
                     batDataLoad = true;
                     batTitle.innerText = batLines[i];
                     const batLongLines = batLines[i+1].split('*');
@@ -171,15 +174,16 @@ function getComputerInfo() {
         })
         .then(data => {
             const c = cInput.value;
+            const cValues = c.split(' ');
             const cLines = data.split('\n');
             for(let i = 0; i < cLines.length; i++) {
-                if(cLines[i].toLowerCase().includes(c.toLowerCase().trim()) && c!='') {
+                if(cLines[i].toLowerCase().includes(cValues[0].toLowerCase().trim()) && c!='') {
                     if(document.getElementById('cLn').innerHTML == '' && (batDataLoad || gpuDataLoad || cpuDataLoad)) {
                         const miniLine = elementFromHtml("<hr style='margin: 10px 25em; border-bottom: 3px solid black;'>");
                         document.getElementById('cLn').appendChild(miniLine); 
                     }
                     checkForDividingLine();
-                    doMap();
+                    
                     
                     cTitle.innerHTML = cLines[i];
 
@@ -205,7 +209,7 @@ function getComputerInfo() {
         memoryDisposalText.innerHTML = "<div class='text'>DATA SECRUITY: Before getting rid of your memory components make sure to wipe all data securely. For sensitive data consider destroying the drive by shredding it or drilling holes.<br><br>Some companies, like Samsung and Western Digital may offer trade-in programs but they are often very limited.</div>";
         
         ecommerceTitle.innerHTML = "Selling and Trading your Devices and Components";
-        ecommerceText.innerHTML = "<div class='text'>There are many ways to trade in or sell your computers and components. You can trade-in your full computer through websites like Swappa, Uptrade, and TradeMor.<br>Or you can sell your devices and components on <br><div class='text'>ONLINE MARKETPLACES like eBay and Cragslist<br>SPECIALIZED WEBSITES like Newegg and PCPartPicker<br>TECH FORUMS like HardForum and Reddit<br>LOCAL SHOPS like Pawn shops and Computer Repair shops.</div></div>";
+        ecommerceText.innerHTML = "<div class='text'>There are many ways to trade in or sell your computers and components. You can trade-in your full computer through websites like Swappa, Uptrade, and TradeMore.<br>Or you can sell your devices and components on <br><div class='text'>ONLINE MARKETPLACES like eBay and Craigslist<br>SPECIALIZED WEBSITES like Newegg and PCPartPicker<br>TECH FORUMS like HardForum and Reddit<br>LOCAL SHOPS like Pawn shops and Computer Repair shops.</div></div>";
 
     function elementFromHtml(html) {
         const template = document.createElement("template");
