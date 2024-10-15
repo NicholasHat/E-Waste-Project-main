@@ -327,7 +327,13 @@ li a.active,li a:hover{
     background: white;
     width: 100%;
     height: auto;
-    
+    margin: 0;
+}
+
+@media screen and (min-width: 900px) {
+    .results {
+        padding: 0 200px;
+    }
 }
 
 .title {
@@ -396,26 +402,36 @@ header .logo:hover {
         transform: translateX(-100%);
     }
 }
-#modal {
-    color: black;
-    background-color: rgba(0, 0, 0, 0.311);
-    margin-top: -10vh;
-    margin-left: 28vh;
-    margin-right: auto;
-    margin-bottom: -50vh;
-    justify-content: center;
+
+#recyclingInfo{
+    font-weight: bold;
     text-align: center;
-    padding: 5vh 1vh;
-    width: 60vh;
-    border-radius: 2vh;
-    /* display: none; */
-    opacity: 0;
-    display: none;
-    box-shadow: 2px 2px 8px rgb(0, 0, 0);
-    animation: opac 0.3s forwards;
-  }
-@keyframes opac{
-  100%  {
-    opacity: 1;
-  }
+}
+
+#recyclingMap{
+    text-align: center;
+    justify-content: center;
+    
+    border-radius: 50%;
+    overflow: hidden;
+
+    
+}
+#googleMap{
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+
+}
+
+#recyclingBelowText{
+    text-align: center;
+
+}
+#magnifyingGlass{
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    margin: auto;
+    text-align: center;
 }

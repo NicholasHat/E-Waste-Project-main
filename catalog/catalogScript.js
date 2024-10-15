@@ -4,6 +4,10 @@ const cpuInput = document.getElementById('cpuInput');
 const gpuInput = document.getElementById('gpuInput');
 
 /*have to move this code to after html elements are added to page */
+const recyclingInfo = document.getElementById('recyclingInfo');
+const recyclingMap = document.getElementById('recyclingMap');
+const magnifyingGlass = document.getElementById('magnifyingGlass');
+const recyclingBelowText = document.getElementById('recyclingBelowText');
 const cTitle = document.getElementById('cTitle');
 const cLongevityText = document.getElementById('cLongevityText');
 const cDisposalTitle = document.getElementById('cDisposalTitle');
@@ -25,6 +29,13 @@ const gpuLongevityText = document.getElementById('gpuLongevityText');
 const gpuDisposalTitle = document.getElementById('gpuDisposalTitle');
 const gpuDisposalText = document.getElementById('gpuDisposalText');
 const batGeneralDisposal = document.getElementById('batGeneralDisposal');
+const memoryTitle = document.getElementById('memoryTitle');
+const memoryLongevityTitle = document.getElementById('memoryLongevityTitle');
+const memoryLongevityText = document.getElementById('memoryLongevityText');
+const memoryDisposalTitle = document.getElementById('memoryDisposalTitle');
+const memoryDisposalText = document.getElementById('memoryDisposalText');
+const ecommerceTitle = document.getElementById('ecommerceTitle');
+const ecommerceText = document.getElementById('ecommerceText');
 
 let batDataLoad = false;
 let cpuDataLoad = false;
@@ -49,17 +60,20 @@ function getComputerInfo() {
             for (let i = 0; i < gpuLines.length; i++) {
                 if (gpuLines[i].toLowerCase().includes(gpu.toLowerCase().trim()) && gpu!='') {
                     checkForDividingLine();
+                    doMap();
                     gpuDataLoad = true;
                     gpuTitle.innerText = gpuLines[i];
                     
-                    const gpuLongLines = gpuLines[i+1].split(',');
-                    gpuLongevityTitle.innerText = gpuLongLines[0];
-                    gpuLongevityText.innerText = gpuLongLines[1];  
+                    const gpuLongLines = gpuLines[i+1].split('*');
+                    console.log(gpuLongLines);
+                    gpuLongevityTitle.innerHTML = gpuLongLines[0];
+                    gpuLongevityText.innerHTML = gpuLongLines[1];  
 
-                    const gpuDispLines = gpuLines[i+2].split(','); 
-                    gpuDisposalTitle.innerText = gpuDispLines[0];
-                    gpuDisposalText.innerText = gpuDispLines[1];
-                    recycleLink(gpuDisposalText);
+                    const gpuDispLines = gpuLines[i+2].split('*'); 
+                    gpuDisposalTitle.innerHTML = gpuDispLines[0];
+                    gpuDisposalText.innerHTML = gpuDispLines[1];
+
+                    break;
                 }
             }
         })
@@ -85,18 +99,19 @@ function getComputerInfo() {
                         document.getElementById('cpuLn').appendChild(miniLine);
                     }
                     checkForDividingLine();
+                    doMap();
                     cpuDataLoad = true;
 
                     cpuTitle.innerText = cpuLines[i];
                         
-                    const cpuLongLines = cpuLines[i+1].split(',');
-                    cpuLongevityTitle.innerText = cpuLongLines[0];
-                    cpuLongevityText.innerText = cpuLongLines[1];
+                    const cpuLongLines = cpuLines[i+1].split('*');
+                    cpuLongevityTitle.innerHTML = cpuLongLines[0];
+                    cpuLongevityText.innerHTML = cpuLongLines[1];
 
-                    const cpuDispLines = cpuLines[i+2].split(','); 
-                    cpuDisposalTitle.innerText = cpuDispLines[0];
-                    cpuDisposalText.innerText = cpuDispLines[1];
-                    recycleLink(cpuDisposalText);
+                    const cpuDispLines = cpuLines[i+2].split('*'); 
+                    cpuDisposalTitle.innerHTML = cpuDispLines[0];
+                    cpuDisposalText.innerHTML = cpuDispLines[1];
+    
                     break;
                 }
             }
@@ -123,20 +138,21 @@ function getComputerInfo() {
                         document.getElementById('batLn').appendChild(miniLine);
                     }
                     checkForDividingLine();
+                    doMap();
                     batDataLoad = true;
                     batTitle.innerText = batLines[i];
-                    const batLongLines = batLines[i+1].split(',');
+                    const batLongLines = batLines[i+1].split('*');
                     console.log(batLines[i+1]);
                     batLongevityTitle.innerText = batLongLines[0];
                     batLongevityText.innerHTML = batLongLines[1];
-                    batGeneral.innerHTML = "<div class='text'><br>UPDATE SOFTWARE: Keep your operating system and drivers updated, as optimizations can improve battery management. <br>BATTERY HEALTH MONITORING: Use software tools to monitor battery health and usage patterns, allowing you to adjust settings for better longevity. <br>AVOID CONSTANT PLUGGING: While it’s okay to keep the laptop plugged in, try not to do so constantly; occasional discharging is beneficial.</div>";
+                    batGeneral.innerHTML = "<div class='text'>UPDATE SOFTWARE: Keep your operating system and drivers updated, as optimizations can improve battery management. <br>BATTERY HEALTH MONITORING: Use software tools to monitor battery health and usage patterns, allowing you to adjust settings for better longevity. <br>AVOID CONSTANT PLUGGING: While it’s okay to keep the laptop plugged in, try not to do so constantly; occasional discharging is beneficial.</div>";
                     
 
-                    const batDispLines = batLines[i+2].split(','); 
+                    const batDispLines = batLines[i+2].split('*'); 
                     batDisposalTitle.innerText = batDispLines[0];
                     batDisposalText.innerHTML = batDispLines[1];
                     batGeneralDisposal.innerHTML = "<div class='text'><br>KEEP BATTERIES SAFE: When transporting used batteries for disposal, keep them in a plastic bag or a battery container to prevent short-circuiting.<br>AVOID INCIERNATION: Never burn batteries as this can cause toxic fumes and explosions.<br>CHECK LOCAL REGULATIONS: Always check local regulations regarding battery disposal and recycling, as guidelines can vary by location.</div>"
-                    recycleLink(batDisposalText);
+
 
                     break;
                 }
@@ -163,47 +179,34 @@ function getComputerInfo() {
                         document.getElementById('cLn').appendChild(miniLine); 
                     }
                     checkForDividingLine();
-                    cTitle.innerText = cLines[i];
-                        
-                    const cLongLines = cLines[i+1].split(',');
+                    doMap();
+                    
+                    cTitle.innerHTML = cLines[i];
+
+                    const cLongLines = cLines[i+1].split('*');
                     cLongevityText.innerText = cLongLines[0];
 
-                    const cDispLines = cLines[i+2].split(','); 
+                    const cDispLines = cLines[i+2].split('*'); 
                     cDisposalTitle.innerText = cDispLines[0];
                     cDisposalText.innerText = cDispLines[1];
-                    recycleLink(cDisposalText);
+                    
                     break;
                 }
+
             }
         })
         .catch(error => {
             console.error('Error fetching the file:', error);
         });
+        memoryTitle.innerHTML = "Memory Components(HD, SSD, RAM)";
+        memoryLongevityTitle.innerText = "How to keep Memory Components in Good Condition";
+        memoryLongevityText.innerHTML = "<div class='text'>MAINTAIN OPTIMAL OPERATING CONDITIONS: Keep your computer in a cool dry place, avoinding extreme temperatures and humidity. Also ensure proper airflow through device by cleaning dust and dirt from vents and fans regularly.<br>MONITOR HEALTH: Use software to monitor the health of memory components through SMART data and run diagnostics regularly to check for errors.<br>AVOID OVERFILLING DRIVES: Leave at least 10-20% of the drive space free to maintain performance, especially for SSDs.</div>";
+        memoryDisposalTitle.innerText = "How to properly Recycle your Memory Components";
+        memoryDisposalText.innerHTML = "<div class='text'>DATA SECRUITY: Before getting rid of your memory components make sure to wipe all data securely. For sensitive data consider destroying the drive by shredding it or drilling holes.<br><br>Some companies, like Samsung and Western Digital may offer trade-in programs but they are often very limited.</div>";
         
-    function clicky(){
-        console.log('ruff');
-    }
+        ecommerceTitle.innerHTML = "Selling and Trading your Devices and Components";
+        ecommerceText.innerHTML = "<div class='text'>There are many ways to trade in or sell your computers and components. You can trade-in your full computer through websites like Swappa, Uptrade, and TradeMor.<br>Or you can sell your devices and components on <br><div class='text'>ONLINE MARKETPLACES like eBay and Cragslist<br>SPECIALIZED WEBSITES like Newegg and PCPartPicker<br>TECH FORUMS like HardForum and Reddit<br>LOCAL SHOPS like Pawn shops and Computer Repair shops.</div></div>";
 
-    function recycleLink(element) {
-        const recycleLink = elementFromHtml("<button style='background-color:gray;' onclick='clicky()' >push me</button>");
-        
-        element.appendChild(recycleLink);
-    }
-
-    //adds event listener for modal
-    function startModal() {
-        document.getElementById('modalButton').addEventListener('click', function(e) {
-            if(document.getElementById('modal').style.display == 'none'){
-                document.getElementById('modal').style.display = 'block';
-            }
-            else{
-                
-                document.getElementById('modal').style.display = 'none';
-            }
-            console.log("hi");
-        })
-    }
-    
     function elementFromHtml(html) {
         const template = document.createElement("template");
 
@@ -211,6 +214,25 @@ function getComputerInfo() {
         
         
         return template.content.firstElementChild;
+    }
+    
+    function doMap(){
+        recyclingInfo.innerHTML = "<div font style='bold'><font size='5'><font color='black'><span style='color:green;'>Electronics Recycling Centers</span> in Los Angeles Below<br>Find an <span style='color:green;'>Electronics Recycling Center</span> Near You!</p></div>";
+        recyclingInfo.style.marginTop = '10vh';
+        
+        
+        recyclingMap.innerHTML = "<iframe id='googleMap' src='https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d520942.06484790624!2d-118.49836743977119!3d34.05014862538946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1slos%20angeles%20electronics%20recycling!5e0!3m2!1sen!2sus!4v1728949512626!5m2!1sen!2sus'  style='border:0; width=100%; height=100%; margin: 0 auto 1vh;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>";
+        recyclingMap.style.marginTop=  '5vh'; 
+        recyclingMap.style.marginLeft=  'auto'; 
+        recyclingMap.style.marginBottom=  '1vh'; 
+        recyclingMap.style.marginRight = 'auto';
+        recyclingMap.style.width= '60vh';
+        recyclingMap.style.height= '60vh';
+
+        magnifyingGlass.style.backgroundImage = "url('catalog/Untitled document.jpg')";
+        
+        recyclingBelowText.innerHTML = "<div style='margin-bottom: 10vh;'>If trading or selling your electronic devices/components is not available, recycling would be a great option for you!</div>";
+        recyclingBelowText.style.marginBottom = '20vh';
     }
 
     function checkForDividingLine() {
