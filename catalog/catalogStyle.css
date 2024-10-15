@@ -411,7 +411,9 @@ header .logo:hover {
 #recyclingMap{
     text-align: center;
     justify-content: center;
-    
+    border-style: solid;
+    border-color: black;
+    border-width: 2vh;
     border-radius: 50%;
     overflow: hidden;
 
@@ -421,6 +423,9 @@ header .logo:hover {
     text-align: center;
     border-style: solid;
     border-color: black;
+    align-content: center center;
+    width:100%;
+    height: 100%;
 
 }
 
