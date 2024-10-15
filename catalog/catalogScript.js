@@ -228,11 +228,12 @@ function getComputerInfo() {
         recyclingMap.style.marginRight = 'auto';
         recyclingMap.style.width= '60vh';
         recyclingMap.style.height= '60vh';
+        recyclingMap.style.borderStyle = 'solid';
 
         magnifyingGlass.style.backgroundImage = "url('catalog/Untitled document.jpg')";
         
-        recyclingBelowText.innerHTML = "<div style='margin-bottom: 10vh;'>If trading or selling your electronic devices/components is not available, recycling would be a great option for you!</div>";
-        recyclingBelowText.style.marginBottom = '20vh';
+        recyclingBelowText.innerHTML = "<div style='margin: 0 10vh 20vh;'>If trading or selling your electronic devices/components is not available, recycling would be a great option for you!</div>";
+
     }
 
     function checkForDividingLine() {
