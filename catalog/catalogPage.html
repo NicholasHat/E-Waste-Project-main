@@ -5,14 +5,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
+        <title>TechCycler: Catalog</title>
     </head>
+    <!--navbar-->
     <header id="navbar" class = "w-full shadow-lg">
         <h1><a href="../front/frontPage.html" class="logo text-3xl">TechCycler</a></h1>
         <ul>
             <li ><a href="../catalog/catalogPage.html" class="cool-font text-2xl">Catalog</a></li>
             <li><a href="../policy/policyPage.html" class="cool-font text-2xl">Our Mission</a></li>
         </ul>
-
+    <!-- script for navigation bar on the top of the screen -->
     <script type="text/javascript">
         var lastScrollTop = 0;
         navbar = document.getElementById("navbar");
@@ -35,30 +37,25 @@
             <div class="clearData">
 
             </div>
+            <!--Input for computer specifications-->
             <div class="computerSpecs">
-                
-                
-                <!--buttons: all white background-->
-                <h1>Enter your computer specs</h1>
+                <h1>Enter your Computer Specs</h1>
                 <div class="inputCont">
-                    <input type="text" class="input" id="cInput" placeholder="Computer Make" style="border-color: #60edd9">
+                    <input type="text" class="input" id="cInput" placeholder="Computer Brand" style="border-color: #60edd9">
                     <input type="text" class="input" id="batInput" placeholder="Battery Type" style="border-color: #ac59f3">
-                    <input type="text" class="input" id="gpuInput" placeholder="Brand GPU name" style="border-color: #59a2f5">
-                    <input type="text" class="input" id="cpuInput" placeholder="Brand CPU name" style="border-color: #b113ef">
-                   <!--- <input type="text" class="input" id="gpuInput" placeholder="GPU"> 
-                    <input type="text" class="input" id="ramInput" placeholder="RAM"> -->
+                    <input type="text" class="input" id="gpuInput" placeholder="GPU Brand" style="border-color: #59a2f5">
+                    <input type="text" class="input" id="cpuInput" placeholder="CPU Brand" style="border-color: #b113ef">
                 </div>
 
                 <button onclick="getComputerInfo()">SEARCH</button>
                 
             </div>
-            
-            <div class="results"> <!--all white background: split into generals and specifcs, specifcs being 
-                the ones you type in and generals being the ones that are not unique like RAM(results by computer 
-                company), motherboard kinda same as RAM and cpu, results
-                should show company trade in programs for specifics, display sell and trade in websites-->
+            <!--Search results area-->
+            <div class="results">
                 <div id="divLn"></div>
                 <!--<hr class="dividingLine">-->
+
+                <!-- Displays Recycling map and recycling information -->
                 <div class="mapInfo" id="recyclingInfo"></div>
                 <div id="magnifyingGlass"><div class="map" id="recyclingMap"></div></div>
                 <div id="recyclingBelowText"></div>
@@ -73,6 +70,7 @@
                 <div class="" id="ecommerceText"></div>
                 <div id="cLn"></div>
                 <!--<hr class="miniLine">-->
+                <!-- battery information -->
                 <div class="title" id="batTitle"></div>
                 <div class="miniTitle" id="batLongevityTitle"></div>
                 <div class="text" id="batLongevityText"></div>
@@ -82,6 +80,7 @@
                 <div class="text" id="batGeneralDisposal"></div>
                 <div id="batLn"></div>
                 <!--<hr class="miniLine">-->
+                <!-- cpu information -->
                 <div class="title" id="cpuTitle"></div>
                 <div class="miniTitle" id="cpuLongevityTitle"></div>
                 <div class="text" id="cpuLongevityText"></div>
@@ -89,12 +88,14 @@
                 <div class="text" id="cpuDisposalText"></div>
                 <div id="cpuLn"></div>
                 <!--<hr class="miniLine">-->
+                <!-- gpu information -->
                 <div class="title" id="gpuTitle"></div>
                 <div class="miniTitle" id="gpuLongevityTitle"></div>
                 <div class="text" id="gpuLongevityText"></div>
                 <div class="miniTitle" id="gpuDisposalTitle"></div>
                 <div class="text" id="gpuDisposalText"></div>
                 <!---->
+                <!-- memory information -->
                 <div class="title" id="memoryTitle"></div>
                 <div class="miniTitle" id="memoryLongevityTitle"></div>
                 <div class="text" id="memoryLongevityText"></div>
@@ -114,7 +115,7 @@
         </div>
 
         
-
+        <!-- social icons footer -->
         <footer>
             <div class="footerCont">
                 <div class="socialIcons">
@@ -129,7 +130,6 @@
                         <li><a href="../frontPage.html">Home</a></li>
                         <li><a href="../catalog/catalogPage.html">Catalog</a></li>
                         <li><a href="../policy/policyPage.html">Our Mission</a></li>
-                        <!--<li><a href=""></a></li>-->
                     </ul>
                 </div>
                 

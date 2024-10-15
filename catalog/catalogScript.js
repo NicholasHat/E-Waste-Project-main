@@ -4,31 +4,37 @@ const cpuInput = document.getElementById('cpuInput');
 const gpuInput = document.getElementById('gpuInput');
 
 /*have to move this code to after html elements are added to page */
+// recycling map
 const recyclingInfo = document.getElementById('recyclingInfo');
 const recyclingMap = document.getElementById('recyclingMap');
 const magnifyingGlass = document.getElementById('magnifyingGlass');
 const recyclingBelowText = document.getElementById('recyclingBelowText');
+//computer
 const cTitle = document.getElementById('cTitle');
 const cLongevityText = document.getElementById('cLongevityText');
 const cDisposalTitle = document.getElementById('cDisposalTitle');
 const cDisposalText = document.getElementById('cDisposalText');
+//battery
 const batTitle = document.getElementById('batTitle');
 const batLongevityTitle = document.getElementById('batLongevityTitle');
 const batLongevityText = document.getElementById('batLongevityText');
 const batDisposalTitle = document.getElementById('batDisposalTitle');
 const batDisposalText = document.getElementById('batDisposalText');
 const batGeneral = document.getElementById('batGeneral');
+//cpu
 const cpuTitle = document.getElementById('cpuTitle');
 const cpuLongevityTitle = document.getElementById('cpuLongevityTitle');
 const cpuLongevityText = document.getElementById('cpuLongevityText');
 const cpuDisposalTitle = document.getElementById('cpuDisposalTitle');
 const cpuDisposalText = document.getElementById('cpuDisposalText');
+//gpu
 const gpuTitle = document.getElementById('gpuTitle');
 const gpuLongevityTitle = document.getElementById('gpuLongevityTitle');
 const gpuLongevityText = document.getElementById('gpuLongevityText');
 const gpuDisposalTitle = document.getElementById('gpuDisposalTitle');
 const gpuDisposalText = document.getElementById('gpuDisposalText');
 const batGeneralDisposal = document.getElementById('batGeneralDisposal');
+//memory
 const memoryTitle = document.getElementById('memoryTitle');
 const memoryLongevityTitle = document.getElementById('memoryLongevityTitle');
 const memoryLongevityText = document.getElementById('memoryLongevityText');
@@ -37,6 +43,7 @@ const memoryDisposalText = document.getElementById('memoryDisposalText');
 const ecommerceTitle = document.getElementById('ecommerceTitle');
 const ecommerceText = document.getElementById('ecommerceText');
 
+//used to check above area has been loaded and whether or not to add a dividing line
 let batDataLoad = false;
 let cpuDataLoad = false;
 let gpuDataLoad = false;
@@ -46,7 +53,8 @@ let gpuDataLoad = false;
 /*use for loop to search through each word in input prompt, use break if word found to exit loop*/
 
 function getComputerInfo() {
-    doMap();
+    doMap(); //displays the recycling map and recycling info
+    //opens and reads from gpu.txt loading data onto screen if keywords are matched
     fetch('../data/gpu.txt')
         .then(response => {
             if (!response.ok) {
@@ -59,6 +67,7 @@ function getComputerInfo() {
             const gpuValues = gpu.split(' ');
             const gpuLines = data.split('\n');
             for (let i = 0; i < gpuLines.length; i++) {
+                //displays gpu text
                 if (gpuLines[i].toLowerCase().includes(gpuValues[0].toLowerCase().trim()) && gpu!='') {
                     checkForDividingLine();
                     
@@ -81,7 +90,7 @@ function getComputerInfo() {
         .catch(error => {
             console.error('Error fetching the file:', error);
         });
-
+    //opens and reads from cpu.txt loading data onto screen if keywords are matched
     fetch('../data/cpu.txt')
         .then(response => {
             if (!response.ok) {
@@ -95,6 +104,7 @@ function getComputerInfo() {
             const cpuLines = data.split('\n');
             console.log('why');
             for (let i = 0; i < cpuLines.length; i++) {
+                //displays cpu text
                 if (cpuLines[i].toLowerCase().includes(cpuValues[0].toLowerCase().trim()) && cpu!='') {
                     if (document.getElementById('cpuLn').innerHTML == '' && gpuDataLoad) {
                         const miniLine = elementFromHtml("<hr style='margin: 10px 25em; border-bottom: 3px solid black;'>");
@@ -121,7 +131,7 @@ function getComputerInfo() {
         .catch(error => {
             console.error('Error fetching the file:', error);
         });
-    
+    //opens and reads from battery.txt loading data onto screen if keywords are matched
     fetch('../data/battery.txt')
         .then(response => {
             if(!response.ok) {
@@ -135,6 +145,7 @@ function getComputerInfo() {
             const batLines = data.split('\n');
             console.log('why');
             for(let i = 0; i < batLines.length; i++) {
+                //displays battery text
                 if(batLines[i].toLowerCase().includes(batValues[0].toLowerCase().trim()) && bat!='') {
                     if(document.getElementById('batLn').innerHTML == '' && (cpuDataLoad || gpuDataLoad)) {
                         const miniLine = elementFromHtml("<hr style='margin: 10px 25em; border-bottom: 3px solid black;'>");
@@ -164,7 +175,7 @@ function getComputerInfo() {
         .catch(error => {
             console.error('Error fetching the file:', error);
         });
-    
+    //opens and reads from computer.txt loading data onto screen if keywords are matched
     fetch('../data/computer.txt')
         .then(response => {
             if(!response.ok) {
@@ -177,6 +188,7 @@ function getComputerInfo() {
             const cValues = c.split(' ');
             const cLines = data.split('\n');
             for(let i = 0; i < cLines.length; i++) {
+                //displays computer text
                 if(cLines[i].toLowerCase().includes(cValues[0].toLowerCase().trim()) && c!='') {
                     if(document.getElementById('cLn').innerHTML == '' && (batDataLoad || gpuDataLoad || cpuDataLoad)) {
                         const miniLine = elementFromHtml("<hr style='margin: 10px 25em; border-bottom: 3px solid black;'>");
@@ -202,6 +214,7 @@ function getComputerInfo() {
         .catch(error => {
             console.error('Error fetching the file:', error);
         });
+        //loads memory information if button pressed
         memoryTitle.innerHTML = "Memory Components(HD, SSD, RAM)";
         memoryLongevityTitle.innerText = "How to keep Memory Components in Good Condition";
         memoryLongevityText.innerHTML = "<div class='text'>MAINTAIN OPTIMAL OPERATING CONDITIONS: Keep your computer in a cool dry place, avoinding extreme temperatures and humidity. Also ensure proper airflow through device by cleaning dust and dirt from vents and fans regularly.<br>MONITOR HEALTH: Use software to monitor the health of memory components through SMART data and run diagnostics regularly to check for errors.<br>AVOID OVERFILLING DRIVES: Leave at least 10-20% of the drive space free to maintain performance, especially for SSDs.</div>";
@@ -211,7 +224,7 @@ function getComputerInfo() {
         ecommerceTitle.innerHTML = "Selling and Trading your Devices and Components";
         ecommerceText.innerHTML = "<div class='text'>There are many ways to trade in or sell your computers and components. You can trade-in your full computer through websites like Swappa, Uptrade, and TradeMore.<br>Or you can sell your devices and components on <br><div class='text'>ONLINE MARKETPLACES like eBay and Craigslist<br>SPECIALIZED WEBSITES like Newegg and PCPartPicker<br>TECH FORUMS like HardForum and Reddit<br>LOCAL SHOPS like Pawn shops and Computer Repair shops.</div></div>";
 
-    function elementFromHtml(html) {
+    function elementFromHtml(html) { //function to create template of html parameter
         const template = document.createElement("template");
 
         template.innerHTML = html.trim();
@@ -220,7 +233,7 @@ function getComputerInfo() {
         return template.content.firstElementChild;
     }
     
-    function doMap(){
+    function doMap(){ //function to display recycling map and recycling information
         recyclingInfo.innerHTML = "<div font style='bold'><font size='5'><font color='black'><span style='color:green;'>Electronics Recycling Centers</span> in Los Angeles Below<br>Find an <span style='color:green;'>Electronics Recycling Center</span> Near You!</p></div>";
         recyclingInfo.style.marginTop = '10vh';
         
@@ -234,13 +247,13 @@ function getComputerInfo() {
         recyclingMap.style.height= '60vh';
         recyclingMap.style.borderStyle = 'solid';
 
-        magnifyingGlass.style.backgroundImage = "url('catalog/Untitled document.jpg')";
+        magnifyingGlass.style.backgroundImage = "url('../images/Untitled document.jpg')";
         
         recyclingBelowText.innerHTML = "<div style='margin: 0 10vh 20vh;'>If trading or selling your electronic devices/components is not available, recycling would be a great option for you!</div>";
 
     }
 
-    function checkForDividingLine() {
+    function checkForDividingLine() { //creates dividing line between component results
         if(document.getElementById('divLn').innerHTML == '') {
             const divLine = elementFromHtml("<hr style='margin: 0 20px;border-bottom: 3px solid black;'>");
             document.getElementById('divLn').appendChild(divLine);

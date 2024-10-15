@@ -11,7 +11,7 @@ body{
     width: 100%;
     overflow-x: hidden !important;
 }
-
+/*header and footer style*/
 @media screen and (min-width: 650px) {
     header {
 	    position: fixed; 
@@ -99,6 +99,7 @@ header ul li {
 	position: relative;
 	list-style: none;
 	align-items: center;
+    white-space: nowrap;
     width: fit-content;
     font-family: headingFont;
     font-weight: 1000;
@@ -226,7 +227,7 @@ header .logo:hover {
 .mainCont {
     justify-self: center;
     padding-top: 30px;
-    width: 80%;
+    width: 90%;
     height: fit-content;
     justify-content: center;
     align-items: center;
@@ -291,5 +292,8 @@ hr {
     }
     #navbar li a {
     font-size: 17px;
+    }
+    header ul li a {
+        margin: 0 5px;
     }
 }

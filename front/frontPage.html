@@ -5,13 +5,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
+        <title>TechCycler: Home</title>
     </head>
-    <header id="navbar" class = "w-full shadow-lg">
+    <!-- navigation bar at top of page -->
+    <header id="navbar" class = "w-full shadow-lg"> 
 	<h1><a href="../front/frontPage.html" class="logo text-3xl">TechCycler</a></h1>
 	<ul>
 		<li ><a href="../catalog/catalogPage.html" class="cool-font text-2xl">Catalog</a></li>
         <li><a href="../policy/policyPage.html" class="cool-font text-2xl">Our Mission</a></li>
 	</ul>
+    <!-- script for navigation bar -->
     <script type="text/javascript">
         var lastScrollTop = 0;
         navbar = document.getElementById("navbar");
@@ -29,6 +32,7 @@
 	</header>
     
     <body>
+        <!-- This is the Typing text on homepage -->
         <div id="welcomeInfo">
             <div class="content shadow-lg">
                 <div class="contentText">
@@ -50,97 +54,112 @@
                 <a href=""><i class="fa-brands fa-youtube"></i></a>
             </div>
             <div class="w-full bg-blue-100 shadow-2xl border-dashed">
+                <!-- text box information about e-waste -->
                 <div class="boxes">
                     <div class="box">
                         <div class="boxTextTitle">Increasing Computer <span class="boxTextTitle" style="color:  #60edd9">Life</span> Expectancy
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>It could be hard to find information to keep your computer in good condition, but that's why we create a one stop destination for your needs! Using our catalog, you will find helpful information used to increase your computer life expectancy. You will find all the information on how to keep the components of your computer in good condition for as long as possible. You'll find information on how to clean the insides, what outside temperatures are good, and so much more. 
+                        </p>
                     </div>
                     <div class="box">
                         <div class="boxTextTitle">Recycling E-Waste</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Recycling E-waste could be tricky, especially without knowing the easiest and most rewarding ways. Luckily, you can use our catalog tool to discover trade-in programs for computers and computer components. For your old devices you can receive store credit and discounts towards fresh products! And if you can’t trade-in, the catalog will also tell you the most environmentally responsible way of disposal so you can reduce e-waste in landfills. 
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- flashcards -->
         <div>
             <section class="effects"> 
+                <!-- title of flashcards -->
                 <h2 class="effects-category">Environmental Impact</h2>
                 <div style="padding-top: 30px">
                     <div class="effects-container">
+                        <!-- soil flashcard -->
                         <div class="flip-card">
                             <div class="flip-card-inner">
-                                <div class="flip-card-front">
+                                <div class="flip-card-front" id="soilPol">
                                 </div>
-                                <div class="flip-card-back">
-                                  <h1>Bad thing</h1>
-                                  <p>it hurts nature yo</p>
-                                  <p>We love that guy</p>
+                                <div class="flip-card-back" style="background-color: #62d8ca;">
+                                  <h1><b>Soil Pollution</b></h1>
+                                  <p class="">By improperly disposing of e-waste in landfills or elsewhere, we risk contaminating the ground indefinitely with heavy metals and flame retardants. Contaminated soil can remain toxic for years– even decades– affecting crops and wildlife that eventually soak up these chemicals in their systems.
+                                </p>
+                                  
+                                </div>
+                              </div>
+                        </div>
+                        <!-- water flashcard -->
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front" id="waterPol">
+                                </div>
+                                <div class="flip-card-back" style="background-color: #52b4f3;">
+                                  <h1><b>Water Pollution</b></h1>
+                                  <p>Dumping e-waste in landfills can form leachates that seep into groundwater supplies and lead to rivers, lakes, and oceans. These leachates contain hazardous contaminants like lead, mercy, or plastics that cause acidification in fresh or salt waters. This acidification results in dead marine life, declining biodiversity, and destroyed ecosystems.  </p>
+                                  
+                                </div>
+                              </div>
+                        </div>
+                        <!-- air flashcard -->
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front" id="airPol">
+                                </div>
+                                <div class="flip-card-back" style="background-color: #2d81ff;">
+                                  <h1><b>Air Pollution</b></h1>
+                                  <p>Burning e-waste releases toxic chemicals (mercury, lead, cadmium, flame retardants, etc) that can travel thousands of miles away and chronically pollute organisms and ecosystems far from these landfills. Additionally, vast amounts of carbon dioxide is released, contributing to global emissions. These fine particles slowly accumulate over time, resulting in serious health disorders in organisms. </p>
+                                  
                                 </div>
                               </div>
                         </div>
                         <div class="flip-card">
                             <div class="flip-card-inner">
-                                <div class="flip-card-front">
+                                <div class="flip-card-front" id="humanHealth">
                                 </div>
-                                <div class="flip-card-back">
-                                  <h1>Bad thing</h1>
-                                  <p>it hurts nature yo</p>
-                                  <p>We love that guy</p>
-                                </div>
-                              </div>
-                        </div>
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                </div>
-                                <div class="flip-card-back">
-                                  <h1>Bad thing</h1>
-                                  <p>it hurts nature yo</p>
-                                  <p>We love that guy</p>
+                                <div class="flip-card-back" style="background-color: #755ff8;">
+                                  <h1><b>Human Health</b></h1>
+                                  <p>Toxins contained in e-waste adversely affect human health, targeting the human nervous and reproductive systems and major organs like the heart, liver, and kidneys. The accumulation of these toxins can lead to birth defects, disease, and numerous other health complications.
+                                </p>
+                                  
                                 </div>
                               </div>
                         </div>
+                        <!-- Resource flashcard -->
                         <div class="flip-card">
                             <div class="flip-card-inner">
-                                <div class="flip-card-front">
+                                <div class="flip-card-front" id="resDepl">
                                 </div>
-                                <div class="flip-card-back">
-                                  <h1>Bad thing</h1>
-                                  <p>it hurts nature yo</p>
-                                  <p>We love that guy</p>
+                                <div class="flip-card-back" style="background-color: #a840f9;">
+                                  <h1><b>Resource Depletion</b></h1>
+                                  <p>Electronics involve rare earth metals such as gold and copper which could be repurposed in new electronics. Rare earth metals are scarce, and needlessly discarding them in landfills when they can be repurposed contributes to resource depletion. In turn, this increases demand for such metals and incites mining operations that adversely affect the environment.
+                                </p>
+                                 
                                 </div>
                               </div>
                         </div>
+                        <!-- landfills flashcard -->
                         <div class="flip-card">
                             <div class="flip-card-inner">
-                                <div class="flip-card-front">
+                                <div class="flip-card-front" id="crowdLand">
                                 </div>
-                                <div class="flip-card-back">
-                                  <h1>Bad thing</h1>
-                                  <p>it hurts nature yo</p>
-                                  <p>We love that guy</p>
-                                </div>
-                              </div>
-                        </div>
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                </div>
-                                <div class="flip-card-back">
-                                  <h1>Bad thing</h1>
-                                  <p>it hurts nature yo</p>
-                                  <p>We love that guy</p>
+                                <div class="flip-card-back" style="background-color: #e542fa;">
+                                  <h1><b>Overcrowding Landfills</b></h1>
+                                  <p>As the demand for electronics continues to rise, the need for sustainable disposal methods becomes more urgent. Designating space for larger landfills further destroys numerous habitats, creating inhospitable land filled with materials that could instead be reused.
+                                </p>
+                                 
                                 </div>
                               </div>
                         </div>
                 </div>
                 </div>
+                <!-- left and right arrows to scroll through flashcards -->
                 <button class="pre-btn"><img src="../images/arrow.png" alt=""></button>
                 <button class="nxt-btn"><img src="../images/arrow.png" alt=""></button>
                 
             </section>
-
+            <!-- more text box information on impact of e-waste -->
             <div class="futureGoals ">
                 <div class="websiteInfoContainer" id="ftgoals">
                     <div class="websiteInfo">
@@ -148,8 +167,9 @@
                             <div class="futurePolicyGoals shadow-lg">
                                 <div class="boxesText">
                                     <div class="areaTextTitle">BOOST LONGEVITY</div>
-                                    <p>It's extremely important to take measures to boost the longevity of your devices -- not only for your wallet, but also the environment.  Regularly updating your software and cleaning parts of your computer can help increase the lifespan of your device. This will reduce the need to buy and create new computers meaning less resources need to be extracted for the environment. The longer you hold onto your device, the less e-waste you create!</p>
+                                    <p>The average U.S. household disposes of 176 pounds of electronics per year! That's 400 iPhones worth of e-waste. Most people don’t need to upgrade their devices as often as they do, opting for a newer model with slightly better features. This increases the production amount of e-waste significantly. By boosting the longevity of your devices and choosing not to upcycle, you will not only be able to save money in the long run but also save the environment!</p>
                                 </div>
+                                <!-- engineer image -->
                                 <div class="visual1">
                                     <img src="../images/techmaintain.png" height="100%" style="border-radius: 50%;">
                                 </div>
@@ -157,8 +177,9 @@
                             <div class="futurePolicyGoals shadow-lg">
                                 <div class="boxesText">
                                     <div class="areaTextTitle">CHOOSE RECYCLING</div>
-                                    <p>Recycling is always the better option! Throwing away e-waste poses significant risks to the environment. When e-waste is discarded it can release hazardous substances including lead and mercury into the soil and groundwater. These substances are extremely toxic and can be hazardous if ingested. Furthermore, electronic devices require valuable materials such as gold, and copper. Recycling ensures that we can conserve these materials reducing the need to mine more of it -- which saves precious ecosystems. Not to mention that recycling minimizes the energy and carboonprint needed to produce entirely new technological products. By recycling you can help make the environment a cleaner and healthier place!</p>
+                                    <p>Although the US federal government banned dumping e-waste in landfills in 1976 under the RCRA, only a small fraction of e-waste gets effectively recycled while the rest (85%) still ends up in landfills. From there, chemicals from e-waste often contaminate the ground, water, and air when incinerated. E-waste has many negative effects on the world and on human health. We must properly recycle to protect the environment from e-waste pollution. Recycle your old computers and computer components at E-Waste Recycling Centers to do your part.</p>
                                 </div>
+                                <!-- recycling image -->
                                 <div class="visual1">
                                     <img src="../images/Screenshot 2024-10-01 at 8.28.52 PM.png" height="100%" style="border-radius: 50%">
                                 </div>
@@ -173,7 +194,7 @@
 
 
         
-        
+        <!-- footer at booton of page with social icons -->
         <footer>
             <div class="footerCont">
                 <div class="socialIcons">

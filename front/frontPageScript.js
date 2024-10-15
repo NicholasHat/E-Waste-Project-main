@@ -1,3 +1,4 @@
+/*creates listeners for when carousel buttons are pressed*/
 const productContainers = [...document.querySelectorAll('.effects-container')];
 const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
 const preBtn = [...document.querySelectorAll('.pre-btn')];
@@ -15,11 +16,8 @@ productContainers.forEach((item, i) => {
     })
 })
 
-function openMap() {
-    window.open("../map/map.html", "PopupWindow", "width=800,height=800");
-}
-
-const phrases = ["pollute our water", "kill our animals", "contaminate the land", "posion the air", "damage our health"];
+/*creates rotating phrases animation*/
+const phrases = ["pollute our water", "kill our animals", "contaminate the land", "poison the air", "damage our health"];
 let phraseIndex = 0;
 let charIndex = 0;
 const description = document.getElementById("description");
